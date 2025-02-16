@@ -22,7 +22,7 @@ namespace Unity.FPS.EditorExt
         public void Replace(PrefabReplacer replacer)
         {
             List<GameObject> allPrefabObjectsInScene = new List<GameObject>();
-            foreach (Transform t in GameObject.FindObjectsOfType<Transform>())
+            foreach (Transform t in GameObject.FindObjectsByType<Transform>(FindObjectsInactive.Exclude, FindObjectsSortMode.None))
             {
                 if (PrefabUtility.IsAnyPrefabInstanceRoot(t.gameObject))
                 {

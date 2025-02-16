@@ -18,7 +18,7 @@ namespace Unity.FPS.UI
 
         void Start()
         {
-            PlayerCharacterController character = FindObjectOfType<PlayerCharacterController>();
+            PlayerCharacterController character = FindFirstObjectByType<PlayerCharacterController>();
             DebugUtility.HandleErrorIfNullFindObject<PlayerCharacterController, StanceHUD>(character, this);
             character.OnStanceChanged += OnStanceChanged;
 

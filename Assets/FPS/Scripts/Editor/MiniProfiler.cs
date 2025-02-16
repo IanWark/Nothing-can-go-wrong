@@ -210,11 +210,11 @@ namespace Unity.FPS.EditorExt
         {
             ClearAnalysis();
             EditorStyles.textArea.wordWrap = true;
-            MeshCombiner mainMeshCombiner = GameObject.FindObjectOfType<MeshCombiner>();
+            MeshCombiner mainMeshCombiner = FindAnyObjectByType<MeshCombiner>();
 
             // Analyze
-            MeshFilter[] meshFilters = GameObject.FindObjectsOfType<MeshFilter>();
-            SkinnedMeshRenderer[] skinnedMeshes = GameObject.FindObjectsOfType<SkinnedMeshRenderer>();
+            MeshFilter[] meshFilters = FindObjectsByType<MeshFilter>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+            SkinnedMeshRenderer[] skinnedMeshes = FindObjectsByType<SkinnedMeshRenderer>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
             int skinnedMeshesCount = skinnedMeshes.Length;
             int meshCount = meshFilters.Length;
             int nonCombinedMeshCount = 0;
@@ -257,7 +257,7 @@ namespace Unity.FPS.EditorExt
             }
 
             int rigidbodiesCount = 0;
-            foreach (var r in GameObject.FindObjectsOfType<Rigidbody>())
+            foreach (var r in FindObjectsByType<Rigidbody>(FindObjectsInactive.Exclude, FindObjectsSortMode.None))
             {
                 if (!r.isKinematic)
                 {
@@ -265,8 +265,8 @@ namespace Unity.FPS.EditorExt
                 }
             }
 
-            int lightsCount = GameObject.FindObjectsOfType<Light>().Length;
-            int enemyCount = GameObject.FindObjectsOfType<EnemyController>().Length;
+            int lightsCount = FindObjectsByType<Light>(FindObjectsInactive.Exclude, FindObjectsSortMode.None).Length;
+            int enemyCount = FindObjectsByType<EnemyController>(FindObjectsInactive.Exclude, FindObjectsSortMode.None).Length;
 
             // Level analysis 
             m_LevelAnalysisString += "- Meshes count: " + meshCount;
@@ -296,7 +296,7 @@ namespace Unity.FPS.EditorExt
             s_CellDatas.Clear();
             List<BoundsAndCount> meshBoundsAndCount = new List<BoundsAndCount>();
             Bounds levelBounds = new Bounds();
-            Renderer[] allRenderers = GameObject.FindObjectsOfType<Renderer>();
+            Renderer[] allRenderers = FindObjectsByType<Renderer>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
 
             // Get level bounds and list of bounds & polycount
             for (int i = 0; i < allRenderers.Length; i++)
