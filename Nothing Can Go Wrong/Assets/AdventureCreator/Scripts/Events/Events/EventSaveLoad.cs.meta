@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 2d1b3a911f159a341aa101067fc9c6fc
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Events/Events/EventSaveLoad.cs
+  uploadId: 730294

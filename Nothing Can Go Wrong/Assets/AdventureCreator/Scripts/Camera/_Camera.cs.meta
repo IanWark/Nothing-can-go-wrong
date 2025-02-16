@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: c1cc433b62dde4f73ba3ce6f0a386147
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Camera/_Camera.cs
+  uploadId: 730294

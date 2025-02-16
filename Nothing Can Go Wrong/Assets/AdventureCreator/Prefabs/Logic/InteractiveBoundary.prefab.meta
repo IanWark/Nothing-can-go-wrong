@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9954b01d69b7c4674bad6dbf2f60a07e
+timeCreated: 1520829593
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Prefabs/Logic/InteractiveBoundary.prefab
+  uploadId: 730294

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5be9c78c0ba73284294405f6da0af8e7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Templates/AnimatedCursor/Animation/Visible.anim
+  uploadId: 730294

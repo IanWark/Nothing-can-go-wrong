@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a4806f0a96abf3f41b5e341eb893701b
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Templates/SamplePlayer2D/SamplePlayer2D.prefab
+  uploadId: 730294

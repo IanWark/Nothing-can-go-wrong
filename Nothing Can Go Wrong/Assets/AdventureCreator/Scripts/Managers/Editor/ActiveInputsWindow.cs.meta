@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 85cd72e4f3bbc4c008a95b84d9fd848a
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Managers/Editor/ActiveInputsWindow.cs
+  uploadId: 730294

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 791d91b56819f9b43a3137a07ffd6372
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Templates/GraphicOptions/Assets/Scripts/GraphicOptionsUI.cs
+  uploadId: 730294

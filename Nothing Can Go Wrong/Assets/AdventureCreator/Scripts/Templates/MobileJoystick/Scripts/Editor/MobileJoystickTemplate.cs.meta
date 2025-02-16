@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 0c2a728dbc8d0fc4b9c9ef14f5992f4f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Templates/MobileJoystick/Scripts/Editor/MobileJoystickTemplate.cs
+  uploadId: 730294

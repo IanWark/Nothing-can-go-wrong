@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: f4f9a1788415079438a6280afb9a96ae
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Templates/MobileJoystick/Scripts/Button.cs
+  uploadId: 730294

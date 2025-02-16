@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a2bb794ef4f8fc344a74e73da56baed6
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Templates/SampleScene2D/SampleScene.unity
+  uploadId: 730294

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6ce4d214656d0a14891c8ae59f753280
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Prefabs/Navigation/RandomMarker2D.prefab
+  uploadId: 730294

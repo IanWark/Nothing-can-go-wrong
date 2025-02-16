@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: d5e39759ad2714d35b634c2585348d0f
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/UI/SaveUI.prefab
+  uploadId: 730294

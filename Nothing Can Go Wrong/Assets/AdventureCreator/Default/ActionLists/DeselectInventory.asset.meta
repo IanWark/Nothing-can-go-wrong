@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: c6e29f6ea3d084d049c474742119836c
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Default/ActionLists/DeselectInventory.asset
+  uploadId: 730294

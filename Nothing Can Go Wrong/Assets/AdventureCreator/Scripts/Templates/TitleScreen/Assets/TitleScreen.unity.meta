@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 38dfbc78a0120f046b5dbde62e4754b7
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Templates/TitleScreen/Assets/TitleScreen.unity
+  uploadId: 730294

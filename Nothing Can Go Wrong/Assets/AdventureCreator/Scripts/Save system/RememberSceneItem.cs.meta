@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: d682a95e2dc8f7144af2dd5ab0ac7c85
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Save system/RememberSceneItem.cs
+  uploadId: 730294

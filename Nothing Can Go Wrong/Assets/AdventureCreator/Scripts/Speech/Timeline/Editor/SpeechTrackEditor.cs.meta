@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 8a46992379057482d843b0ca67d817d0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Speech/Timeline/Editor/SpeechTrackEditor.cs
+  uploadId: 730294

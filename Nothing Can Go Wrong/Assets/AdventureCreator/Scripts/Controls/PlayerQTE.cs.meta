@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 47ea91c347def45eba8eff8d87ed487a
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Controls/PlayerQTE.cs
+  uploadId: 730294

@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - BackgroundCamera
   layers:
   - Default
   - TransparentFX
@@ -14,11 +15,11 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
+  - NavMesh
   - FirstPersonWeapon
   - PhysicalAmmo
-  - 
-  - 
+  - BackgroundImage
+  - DistantHotspot
   - 
   - 
   - 

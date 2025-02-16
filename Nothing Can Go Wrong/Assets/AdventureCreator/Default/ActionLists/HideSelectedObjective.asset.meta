@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d25b1951b64504ecca2be84c2a8e0668
+timeCreated: 1571933748
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Default/ActionLists/HideSelectedObjective.asset
+  uploadId: 730294

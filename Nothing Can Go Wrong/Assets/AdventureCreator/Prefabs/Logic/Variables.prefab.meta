@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1bae6b2152a8446a88809e4a3151bcc0
+timeCreated: 1554025521
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Prefabs/Logic/Variables.prefab
+  uploadId: 730294

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ea589611d4eeb5a4ca6f62097cf47ba6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Character/IK/IKCommand.cs
+  uploadId: 730294

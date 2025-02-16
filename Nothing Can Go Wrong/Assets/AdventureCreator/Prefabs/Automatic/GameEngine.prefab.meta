@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5a39e31ce28cc48b096320990773071b
+labels:
+- Engine
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Prefabs/Automatic/GameEngine.prefab
+  uploadId: 730294

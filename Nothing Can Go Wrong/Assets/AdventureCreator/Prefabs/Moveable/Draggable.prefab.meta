@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 0e94642ed4d6147e0bee56c0e91dd586
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Prefabs/Moveable/Draggable.prefab
+  uploadId: 730294

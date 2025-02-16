@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3af524fe90c75a841bab003688e14981
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Templates/SampleScene3D/Template_SampleScene3D.asset
+  uploadId: 730294

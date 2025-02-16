@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0bcf6d992339b5b43a94e96109c3e907
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Templates/AnimatedCursor/CursorUI.prefab
+  uploadId: 730294

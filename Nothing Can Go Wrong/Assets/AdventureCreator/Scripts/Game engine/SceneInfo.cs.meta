@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 56278e9bf60a3d24e9d8136bb5b49ab0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Game engine/SceneInfo.cs
+  uploadId: 730294

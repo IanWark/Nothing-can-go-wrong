@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3e1798ea59d214a2c84c5064331b19a5
+labels:
+- Navigation
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Prefabs/Navigation/Marker.prefab
+  uploadId: 730294

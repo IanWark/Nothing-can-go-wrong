@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 02e542d8743907a4faca816f8472eee7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Templates/AnimatedCursor/Animation/Invisible.anim
+  uploadId: 730294

@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: ebaaf5669a65c41708bcf30dcc2b7e61
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Logic/Editor/ArrowPromptEditor.cs
+  uploadId: 730294

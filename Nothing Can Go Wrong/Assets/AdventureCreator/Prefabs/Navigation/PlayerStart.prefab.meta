@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9c6d82e28b280448ea70b3f4f7011508
+labels:
+- Navigation
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Prefabs/Navigation/PlayerStart.prefab
+  uploadId: 730294

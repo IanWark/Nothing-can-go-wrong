@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4e4d49fd1ed164d27b03fc4e366bd29a
+labels:
+- Logic
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Prefabs/Logic/Trigger.prefab
+  uploadId: 730294

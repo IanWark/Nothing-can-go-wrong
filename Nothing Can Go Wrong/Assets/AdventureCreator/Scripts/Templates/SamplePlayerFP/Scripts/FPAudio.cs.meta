@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: b42555f7450958e4da7085a4c8a4a24f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Templates/SamplePlayerFP/Scripts/FPAudio.cs
+  uploadId: 730294

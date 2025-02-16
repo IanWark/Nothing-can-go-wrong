@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8ad32dc065daffb4bac51f4d38ff91b3
+timeCreated: 1511165787
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Templates/NineVerbs/UI/SubtitlesUI.prefab
+  uploadId: 730294

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: cd3c9fb9c4f28e8408d34e261bddcb1c
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Changelog.txt
+  uploadId: 730294

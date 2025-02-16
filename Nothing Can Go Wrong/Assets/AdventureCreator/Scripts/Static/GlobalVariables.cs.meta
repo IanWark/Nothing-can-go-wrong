@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: bbdfcfe2ceb5e4b4ba5b97c6e354f5f9
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Static/GlobalVariables.cs
+  uploadId: 730294

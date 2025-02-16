@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 863cd5d53c44945c2b30dca66dfce16e
+labels:
+- Logic
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Prefabs/Logic/Cutscene.prefab
+  uploadId: 730294

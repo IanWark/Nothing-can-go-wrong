@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 8b78a125ae22041aa92c0223821f8d84
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Save system/RememberVisibility.cs
+  uploadId: 730294

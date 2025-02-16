@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ce3654a118f123a469a4d30f4d3e4e44
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/ActionList/JsonAction.cs
+  uploadId: 730294

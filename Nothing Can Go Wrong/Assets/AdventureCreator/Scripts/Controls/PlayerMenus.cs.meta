@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 5d2624bd2fdf542d3a975d8f6eaa618e
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Controls/PlayerMenus.cs
+  uploadId: 730294

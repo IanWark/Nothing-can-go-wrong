@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09184749b5de7d2409da2765b0430cfc, type: 3}
+  m_Name: NGWData
+  m_EditorClassIdentifier: 
+  templates:
+  - {fileID: 11400000, guid: 0b06eca5e9e21b54eb7ed65d99f8d7ea, type: 2}
+  - {fileID: 11400000, guid: 66654e620ec420240a214b5e01286faa, type: 2}
+  - {fileID: 11400000, guid: 5c91f4f7db49a9049924be24303dae99, type: 2}
+  - {fileID: 11400000, guid: 055f063ad9519444b973550cf680e133, type: 2}
+  - {fileID: 11400000, guid: 9139e72b72c8f084c86dc1710ec35f01, type: 2}
+  defaultCursorManager: {fileID: 11400000, guid: 8fea55d96aa3b44fa830fcf6377dfdb5,
+    type: 2}
+  defaultMenuManager: {fileID: 11400000, guid: 6e2d633f29a8f424895adadff5656688, type: 2}
+  perspective2DPreview: {fileID: 2800000, guid: 8068814baee0b1d4ba752c5255f5b9f9,
+    type: 3}
+  perspective25DPreview: {fileID: 2800000, guid: 884e632c9409d764d9f118a8d7676ae4,
+    type: 3}
+  perspective3DPreview: {fileID: 2800000, guid: 3218559897f2fa541a3e804e379071af,
+    type: 3}
+  base2DPreview: {fileID: 2800000, guid: 760dc5229c2e1174ca1e343ed96cf420, type: 3}
+  base25DPreview: {fileID: 2800000, guid: 3f85f83932eb67149b3a81a35bc39435, type: 3}
+  base3DPreview: {fileID: 2800000, guid: b1a0fe2f58a5fa54999b0a96d6d98a00, type: 3}
+  nonePreview: {fileID: 2800000, guid: ff0a80e67bcc4364aa1c83c605e68652, type: 3}
+  pointAndClickPreview: {fileID: 2800000, guid: a7be02f4d8ca00548bd3d6ddd7f9e617,
+    type: 3}
+  directPreview: {fileID: 2800000, guid: dfdd8e3f38d347d4181d8c7cc2184221, type: 3}
+  firstPersonPreview: {fileID: 2800000, guid: aa593766222e1b049b127e98fe5824d8, type: 3}
+  mouseAndKeyboardPreview: {fileID: 2800000, guid: 8e9480b311985e449a25698f287b0cf3,
+    type: 3}
+  keyboardOrControllerPreview: {fileID: 2800000, guid: b8ef3550e2604454e9d1152cd4809633,
+    type: 3}
+  touchScreenPreview: {fileID: 2800000, guid: 22a5e603809f3ae4c9c9c42534364366, type: 3}
+  contextSensitivePreview: {fileID: 2800000, guid: 36850238a459de04ab21c9f8e4481f59,
+    type: 3}
+  chooseHotspotThenInteractionPreview: {fileID: 2800000, guid: 8f26924b32a53c644a5bc47c2fd2ef30,
+    type: 3}
+  chooseInteractionThenHotspotPreview: {fileID: 2800000, guid: 0e8d735b0c3b4be4da73940a47f95fec,
+    type: 3}

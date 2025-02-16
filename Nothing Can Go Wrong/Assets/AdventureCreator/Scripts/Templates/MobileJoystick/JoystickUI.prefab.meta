@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2f65cece4821c7242bd145a6941c56c2
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Templates/MobileJoystick/JoystickUI.prefab
+  uploadId: 730294

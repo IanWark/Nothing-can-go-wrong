@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: e031b298bd30e4c19a27192c972d2b3d
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/UI/PauseUI.prefab
+  uploadId: 730294

@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: fcba562f2415e4899ae2f6d1b0306c57
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Moveable/DragBase.cs
+  uploadId: 730294

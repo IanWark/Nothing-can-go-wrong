@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 324b8f775d785b1469c8ce79f6799ef9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Events/Events/EventMoveableGrab.cs
+  uploadId: 730294

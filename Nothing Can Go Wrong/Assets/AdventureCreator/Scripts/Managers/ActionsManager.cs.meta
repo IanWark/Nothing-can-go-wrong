@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 0a0c43bf7c11a40f386c183fa9601d86
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Managers/ActionsManager.cs
+  uploadId: 730294

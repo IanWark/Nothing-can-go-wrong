@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: e0d8852e025c64d8ea8609dc58ddfb72
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Prefabs/Moveable/StraightTrack.prefab
+  uploadId: 730294

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b98f461fc94254eefb638fc3c0b77e2f
+labels:
+- Navigation
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Prefabs/Navigation/CollisionCylinder.prefab
+  uploadId: 730294

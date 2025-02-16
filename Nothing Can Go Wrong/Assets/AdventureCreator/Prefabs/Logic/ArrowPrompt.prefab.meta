@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d2e6dbc8e4a4548d7bded62d3dc8f83e
+labels:
+- Logic
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Prefabs/Logic/ArrowPrompt.prefab
+  uploadId: 730294

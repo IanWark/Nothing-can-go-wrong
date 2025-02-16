@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 8e71fda21aee4b64ab099ad915f9885d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Navigation/AStar2D/Pathfinding.cs
+  uploadId: 730294

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c482012c57ebea34fb582b29e427bd16, type: 3}
+  m_Name: Template_SamplePlayer2D
+  m_EditorClassIdentifier: 
+  exampleScenes: []
+  playerPrefab: {fileID: 3402324189887888558, guid: a4806f0a96abf3f41b5e341eb893701b,
+    type: 3}
+  previewTexture: {fileID: 2800000, guid: ade0dc295d7475f48874f8c5b438959a, type: 3}
+  animator: {fileID: 9100000, guid: df730174e7edcf34d94ab4cee2b08bac, type: 2}

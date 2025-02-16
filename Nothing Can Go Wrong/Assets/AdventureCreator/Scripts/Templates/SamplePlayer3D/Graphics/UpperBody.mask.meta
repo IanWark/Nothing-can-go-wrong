@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a30e290cf68b2d84fb1889cd7a4dc7a7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 31900000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Templates/SamplePlayer3D/Graphics/UpperBody.mask
+  uploadId: 730294

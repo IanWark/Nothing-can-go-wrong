@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: cbee2b5061bab49f5a8210cb3f8b2aff
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Prefabs/Camera/SimpleCamera.prefab
+  uploadId: 730294

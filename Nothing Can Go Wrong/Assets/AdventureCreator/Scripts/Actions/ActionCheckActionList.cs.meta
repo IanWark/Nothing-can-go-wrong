@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: dbc586c126dea4454bf8b23b31900d61
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Actions/ActionCheckActionList.cs
+  uploadId: 730294

@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 7e8abad0d642d44f1b4e97ab3388f82e
+timeCreated: 1543319569
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Static/StatusBox.cs
+  uploadId: 730294

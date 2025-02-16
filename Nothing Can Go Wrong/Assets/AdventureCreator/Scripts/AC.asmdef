@@ -1,0 +1,58 @@
+{
+    "name": "AC",
+    "rootNamespace": "",
+    "references": [
+        "Unity.Timeline",
+        "Unity.Addressables",
+        "Unity.ResourceManager",
+        "Unity.Localization",
+        "Unity.TextMeshPro",
+        "Unity.RenderPipelines.Universal.Runtime",
+        "Unity.RenderPipelines.Universal.2D.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.timeline",
+            "expression": "",
+            "define": "TimelineIsPresent"
+        },
+        {
+            "name": "com.unity.addressables",
+            "expression": "",
+            "define": "AddressableIsPresent"
+        },
+        {
+            "name": "com.unity.localization",
+            "expression": "",
+            "define": "LocalizationIsPresent"
+        },
+        {
+            "name": "com.unity.textmeshpro",
+            "expression": "",
+            "define": "TextMeshProIsPresent"
+        },
+        {
+            "name": "com.unity.ugui",
+            "expression": "2.0.0",
+            "define": "TextMeshProIsPresent"
+        },
+        {
+            "name": "com.unity.ugui",
+            "expression": "2.0.0",
+            "define": "UGUI2IsPresent"
+        },
+        {
+            "name": "com.unity.render-pipelines.universal",
+            "expression": "17.0.0",
+            "define": "URPIsPresent"
+        }
+    ],
+    "noEngineReferences": false
+}

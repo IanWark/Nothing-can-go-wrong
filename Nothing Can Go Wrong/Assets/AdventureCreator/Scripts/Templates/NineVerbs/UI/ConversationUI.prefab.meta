@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3f1e266785057ce4f80152fedfcaf45e
+timeCreated: 1511165924
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Templates/NineVerbs/UI/ConversationUI.prefab
+  uploadId: 730294

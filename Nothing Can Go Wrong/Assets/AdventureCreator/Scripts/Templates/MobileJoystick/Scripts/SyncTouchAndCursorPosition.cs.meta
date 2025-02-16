@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e7a7b98dadf76934999eb3a146718459
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 11896
+  packageName: Adventure Creator
+  packageVersion: 1.82.5
+  assetPath: Assets/AdventureCreator/Scripts/Templates/MobileJoystick/Scripts/SyncTouchAndCursorPosition.cs
+  uploadId: 730294
