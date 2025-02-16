@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Unity.FPS.AI;
 using Unity.FPS.Game;
 using Unity.FPS.Gameplay;
 using UnityEditor;
@@ -242,7 +241,6 @@ namespace Unity.FPS.EditorExt
                 if (!willBeCombined)
                 {
                     if (!(mf.GetComponentInParent<PlayerCharacterController>() ||
-                          mf.GetComponentInParent<EnemyController>() ||
                           mf.GetComponentInParent<Pickup>() ||
                           mf.GetComponentInParent<Objective>()))
                     {
@@ -266,7 +264,6 @@ namespace Unity.FPS.EditorExt
             }
 
             int lightsCount = FindObjectsByType<Light>(FindObjectsInactive.Exclude, FindObjectsSortMode.None).Length;
-            int enemyCount = FindObjectsByType<EnemyController>(FindObjectsInactive.Exclude, FindObjectsSortMode.None).Length;
 
             // Level analysis 
             m_LevelAnalysisString += "- Meshes count: " + meshCount;
@@ -278,8 +275,6 @@ namespace Unity.FPS.EditorExt
             m_LevelAnalysisString += "- Physics objects (rigidbodies) count: " + rigidbodiesCount;
             m_LevelAnalysisString += k_NewLine;
             m_LevelAnalysisString += "- Lights count: " + lightsCount;
-            m_LevelAnalysisString += k_NewLine;
-            m_LevelAnalysisString += "- Enemy count: " + enemyCount;
 
             // Suggestions
             if (nonCombinedMeshCount > 50)

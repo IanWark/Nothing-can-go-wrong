@@ -5,20 +5,12 @@ namespace Unity.FPS.AI
 {
     public class FollowPlayer : MonoBehaviour
     {
-        Transform m_PlayerTransform;
+        [SerializeField]
+        private Transform m_PlayerTransform;
         Vector3 m_OriginalOffset;
 
         void Start()
         {
-            ActorsManager actorsManager = FindAnyObjectByType<ActorsManager>();
-            if (actorsManager != null)
-                m_PlayerTransform = actorsManager.Player.transform;
-            else
-            {
-                enabled = false;
-                return;
-            }
-
             m_OriginalOffset = transform.position - m_PlayerTransform.position;
         }
 
