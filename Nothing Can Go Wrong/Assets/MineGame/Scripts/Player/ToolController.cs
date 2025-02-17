@@ -11,6 +11,11 @@ namespace Unity.FPS.Game
         Charge,
     }
 
+    public enum ToolEffectType
+    {
+        Knife,
+    }
+
     [System.Serializable]
     public struct CrosshairData
     {
@@ -35,6 +40,10 @@ namespace Unity.FPS.Game
         [Tooltip("The image that will be displayed in the UI for this weapon")]
         [SerializeField]
         public Sprite ToolIcon;
+
+        [Tooltip("If the tool hits an object, it sends a message saying the object was hit by this type")]
+        [SerializeField]
+        public ToolEffectType ToolEffectType;
 
         [Tooltip("Default data for the crosshair")]
         [SerializeField]
@@ -324,6 +333,14 @@ namespace Unity.FPS.Game
             LayerMask layerMask = LayerMask.GetMask("Default");
             if (Physics.Raycast(origin, direction, out RaycastHit hit, Reach, layerMask))
             {
+                // Try to get the hit object as an IInteractable
+                IInteractable interactable = hit.collider.gameObject.GetComponent<IInteractable>();
+                if (interactable != null)
+                {
+                    // Let the object know it was hit by a tool of this type.
+                    interactable.Interact(ToolEffectType);
+                }
+
                 Debug.DrawRay(origin, direction * hit.distance, Color.yellow, DelayBetweenShots);
                 Debug.Log($"Did Hit: {hit.collider.gameObject}");
             }
