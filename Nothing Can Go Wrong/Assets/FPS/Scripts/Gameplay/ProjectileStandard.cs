@@ -96,10 +96,10 @@ namespace Unity.FPS.Gameplay
                 m_HasTrajectoryOverride = true;
 
                 Vector3 cameraToMuzzle = (m_ProjectileBase.InitialPosition -
-                                          playerWeaponsManager.WeaponCamera.transform.position);
+                                          playerWeaponsManager.ToolCamera.transform.position);
 
                 m_TrajectoryCorrectionVector = Vector3.ProjectOnPlane(-cameraToMuzzle,
-                    playerWeaponsManager.WeaponCamera.transform.forward);
+                    playerWeaponsManager.ToolCamera.transform.forward);
                 if (TrajectoryCorrectionDistance == 0)
                 {
                     transform.position += m_TrajectoryCorrectionVector;
@@ -110,7 +110,7 @@ namespace Unity.FPS.Gameplay
                     m_HasTrajectoryOverride = false;
                 }
 
-                if (Physics.Raycast(playerWeaponsManager.WeaponCamera.transform.position, cameraToMuzzle.normalized,
+                if (Physics.Raycast(playerWeaponsManager.ToolCamera.transform.position, cameraToMuzzle.normalized,
                     out RaycastHit hit, cameraToMuzzle.magnitude, HittableLayers, k_TriggerInteraction))
                 {
                     if (IsHitValid(hit))

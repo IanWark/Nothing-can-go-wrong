@@ -81,15 +81,16 @@ MonoBehaviour:
   ToolName: Knife
   ToolIcon: {fileID: 21300000, guid: cab1398a10b307b44b0ffeb0eef23254, type: 3}
   CrosshairDataDefault:
-    CrosshairSprite: {fileID: 0}
-    CrosshairSize: 0
-    CrosshairColor: {r: 0, g: 0, b: 0, a: 0}
+    CrosshairSprite: {fileID: 21300000, guid: 7bc31e8e98f56aa4a90d63e9d7bec6c5, type: 3}
+    CrosshairSize: 10
+    CrosshairColor: {r: 1, g: 1, b: 1, a: 1}
   CrosshairDataTargetInSight:
-    CrosshairSprite: {fileID: 0}
-    CrosshairSize: 0
-    CrosshairColor: {r: 0, g: 0, b: 0, a: 0}
+    CrosshairSprite: {fileID: 21300000, guid: 7bc31e8e98f56aa4a90d63e9d7bec6c5, type: 3}
+    CrosshairSize: 10
+    CrosshairColor: {r: 1, g: 1, b: 1, a: 1}
   ToolRoot: {fileID: 1505447205160222267}
   ShootType: 0
+  Reach: 2
   DelayBetweenShots: 0.5
   UsesPerUse: 1
   NeedsAmmo: 0

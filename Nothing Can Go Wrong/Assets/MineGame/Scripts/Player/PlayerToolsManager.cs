@@ -20,7 +20,7 @@ namespace Unity.FPS.Gameplay
         public List<ToolController> StartingTools = new List<ToolController>();
 
         [Header("References")] [Tooltip("Secondary camera used to avoid seeing tool go through geometries")]
-        public Camera WeaponCamera;
+        public Camera ToolCamera;
 
         [Tooltip("Parent transform where all weapon will be added in the hierarchy")]
         public Transform WeaponParentSocket;
@@ -159,7 +159,7 @@ namespace Unity.FPS.Gameplay
             IsPointingAtEnemy = false;
             if (activeWeapon)
             {
-                if (Physics.Raycast(WeaponCamera.transform.position, WeaponCamera.transform.forward, out RaycastHit hit,
+                if (Physics.Raycast(ToolCamera.transform.position, ToolCamera.transform.forward, out RaycastHit hit,
                     1000, -1, QueryTriggerInteraction.Ignore))
                 {
                     if (hit.collider.GetComponentInParent<Health>() != null)
@@ -187,7 +187,7 @@ namespace Unity.FPS.Gameplay
         public void SetFov(float fov)
         {
             m_PlayerCharacterController.PlayerCamera.fieldOfView = fov;
-            WeaponCamera.fieldOfView = fov * WeaponFovMultiplier;
+            ToolCamera.fieldOfView = fov * WeaponFovMultiplier;
         }
 
         // Iterate on all weapon slots to find the next valid weapon to switch to
@@ -395,36 +395,37 @@ namespace Unity.FPS.Gameplay
                 return false;
             }
 
-            // search our weapon slots for the first free one, assign the weapon to it, and return true if we found one. Return false otherwise
+            // search our tool slots for the first free one, assign the tool to it, and return true if we found one. Return false otherwise
             for (int i = 0; i < m_ToolSlots.Length; i++)
             {
-                // only add the weapon if the slot is free
+                // only add the tool if the slot is free
                 if (m_ToolSlots[i] == null)
                 {
-                    // spawn the weapon prefab as child of the weapon socket
-                    ToolController weaponInstance = Instantiate(toolPrefab, WeaponParentSocket);
-                    weaponInstance.transform.localPosition = Vector3.zero;
-                    weaponInstance.transform.localRotation = Quaternion.identity;
+                    // spawn the tool prefab as child of the tool socket
+                    ToolController toolInstance = Instantiate(toolPrefab, WeaponParentSocket);
+                    toolInstance.transform.localPosition = Vector3.zero;
+                    toolInstance.transform.localRotation = Quaternion.identity;
 
-                    // Set owner to this gameObject so the weapon can alter projectile/damage logic accordingly
-                    weaponInstance.Owner = gameObject;
-                    weaponInstance.SourcePrefab = toolPrefab.gameObject;
-                    weaponInstance.ShowTool(false);
+                    // Set owner to this gameObject so the tool can alter projectile/damage logic accordingly
+                    toolInstance.Owner = gameObject;
+                    toolInstance.SourcePrefab = toolPrefab.gameObject;
+                    toolInstance.SetToolCamera(ToolCamera);
+                    toolInstance.ShowTool(false);
 
-                    // Assign the first person layer to the weapon
+                    // Assign the first person layer to the tool
                     int layerIndex =
                         Mathf.RoundToInt(Mathf.Log(FpsWeaponLayer.value,
                             2)); // This function converts a layermask to a layer index
-                    foreach (Transform t in weaponInstance.gameObject.GetComponentsInChildren<Transform>(true))
+                    foreach (Transform t in toolInstance.gameObject.GetComponentsInChildren<Transform>(true))
                     {
                         t.gameObject.layer = layerIndex;
                     }
 
-                    m_ToolSlots[i] = weaponInstance;
+                    m_ToolSlots[i] = toolInstance;
 
                     if (OnAddedTool != null)
                     {
-                        OnAddedTool.Invoke(weaponInstance, i);
+                        OnAddedTool.Invoke(toolInstance, i);
                     }
 
                     return true;

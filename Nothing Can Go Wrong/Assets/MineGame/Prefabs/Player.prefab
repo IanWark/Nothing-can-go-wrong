@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 2286125971047457827}
   - component: {fileID: 7992205179725001866}
   m_Layer: 0
-  m_Name: WeaponCamera
+  m_Name: ToolCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -500,7 +500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartingTools:
   - {fileID: 1625742581275493324, guid: 78d794ae06babbd4c95e67a10dfd3310, type: 3}
-  WeaponCamera: {fileID: 2286125971047457827}
+  ToolCamera: {fileID: 2286125971047457827}
   WeaponParentSocket: {fileID: 3891163784698469781}
   DefaultWeaponPosition: {fileID: 4354021110288562838}
   AimingWeaponPosition: {fileID: 6033319682454824337}

@@ -54,6 +54,10 @@ namespace Unity.FPS.Game
         [SerializeField]
         private ToolUseType ShootType;
 
+        [SerializeField]
+        [Tooltip("How far the tool can reach.")]
+        private float Reach = 1f;
+
         [Tooltip("Minimum duration between two shots")]
         [SerializeField]
         private float DelayBetweenShots = 0.5f;
@@ -154,6 +158,9 @@ namespace Unity.FPS.Game
         public int GetCurrentLoadedAmmo() => Mathf.FloorToInt(m_CurrentLoadedAmmo);
 
         public bool IsReloading { get; private set; }
+
+        private Camera toolCamera;
+        public void SetToolCamera(Camera camera) { toolCamera = camera; }
 
         private const string k_AnimUseParameter = "Use";
 
@@ -309,6 +316,21 @@ namespace Unity.FPS.Game
             if (ToolAnimator)
             {
                 ToolAnimator.SetTrigger(k_AnimUseParameter);
+            }
+
+            // Cast a ray to see if we hit anything
+            Vector3 origin = toolCamera.transform.position;
+            Vector3 direction = toolCamera.transform.TransformDirection(Vector3.forward);
+            LayerMask layerMask = LayerMask.GetMask("Default");
+            if (Physics.Raycast(origin, direction, out RaycastHit hit, Reach, layerMask))
+            {
+                Debug.DrawRay(origin, direction * hit.distance, Color.yellow, DelayBetweenShots);
+                Debug.Log($"Did Hit: {hit.collider.gameObject}");
+            }
+            else
+            {
+                Debug.DrawRay(origin, direction * Reach, Color.white, DelayBetweenShots);
+                Debug.Log("Did not Hit");
             }
 
             OnShoot?.Invoke();
