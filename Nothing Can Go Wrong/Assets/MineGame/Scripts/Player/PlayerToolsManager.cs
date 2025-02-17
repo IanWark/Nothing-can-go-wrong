@@ -68,7 +68,7 @@ namespace Unity.FPS.Gameplay
 
         public UnityAction<ToolController> OnSwitchedToTool;
         public UnityAction<ToolController, int> OnAddedTool;
-        public UnityAction<ToolController, int> OnRemovedWeapon;
+        public UnityAction<ToolController, int> OnRemovedTool;
 
         ToolController[] m_ToolSlots = new ToolController[9]; // 9 available weapon slots
         PlayerInputHandler m_InputHandler;
@@ -450,9 +450,9 @@ namespace Unity.FPS.Gameplay
                 {
                     m_ToolSlots[i] = null;
 
-                    if (OnRemovedWeapon != null)
+                    if (OnRemovedTool != null)
                     {
-                        OnRemovedWeapon.Invoke(weaponInstance, i);
+                        OnRemovedTool.Invoke(weaponInstance, i);
                     }
 
                     Destroy(weaponInstance.gameObject);

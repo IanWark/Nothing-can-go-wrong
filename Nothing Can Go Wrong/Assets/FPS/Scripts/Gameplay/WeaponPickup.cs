@@ -6,7 +6,7 @@ namespace Unity.FPS.Gameplay
     public class WeaponPickup : Pickup
     {
         [Tooltip("The prefab for the weapon that will be added to the player on pickup")]
-        public WeaponController WeaponPrefab;
+        public ToolController WeaponPrefab;
 
         protected override void Start()
         {
@@ -22,13 +22,13 @@ namespace Unity.FPS.Gameplay
 
         protected override void OnPicked(PlayerCharacterController byPlayer)
         {
-            PlayerWeaponsManager playerWeaponsManager = byPlayer.GetComponent<PlayerWeaponsManager>();
+            PlayerToolsManager playerWeaponsManager = byPlayer.GetComponent<PlayerToolsManager>();
             if (playerWeaponsManager)
             {
-                if (playerWeaponsManager.AddWeapon(WeaponPrefab))
+                if (playerWeaponsManager.AddTool(WeaponPrefab))
                 {
                     // Handle auto-switching to weapon if no weapons currently
-                    if (playerWeaponsManager.GetActiveWeapon() == null)
+                    if (playerWeaponsManager.GetActiveTool() == null)
                     {
                         playerWeaponsManager.SwitchWeapon(true);
                     }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,7 +11,6 @@ namespace Unity.FPS.Game
         Charge,
     }
 
-    /*
     [System.Serializable]
     public struct CrosshairData
     {
@@ -25,7 +23,6 @@ namespace Unity.FPS.Game
         [Tooltip("The color of the crosshair image")]
         public Color CrosshairColor;
     }
-    */
 
     [RequireComponent(typeof(AudioSource))]
     public class ToolController : MonoBehaviour
@@ -33,19 +30,19 @@ namespace Unity.FPS.Game
         [Header("Information")]
         [Tooltip("The name that will be displayed in the UI for this tool")]
         [SerializeField]
-        private string ToolName;
+        public string ToolName;
 
         [Tooltip("The image that will be displayed in the UI for this weapon")]
         [SerializeField]
-        private Sprite ToolIcon;
+        public Sprite ToolIcon;
 
         [Tooltip("Default data for the crosshair")]
         [SerializeField]
-        private CrosshairData CrosshairDataDefault;
+        public CrosshairData CrosshairDataDefault;
 
         [Tooltip("Data for the crosshair when targeting an enemy")]
         [SerializeField]
-        private CrosshairData CrosshairDataTargetInSight;
+        public CrosshairData CrosshairDataTargetInSight;
 
         [Header("Internal References")]
         [Tooltip("The root object for the weapon, this is what will be deactivated when the weapon isn't active")]
@@ -55,7 +52,7 @@ namespace Unity.FPS.Game
         [Header("Shoot Parameters")]
         [Tooltip("The type of weapon wil affect how it shoots")]
         [SerializeField]
-        private WeaponShootType ShootType;
+        private ToolUseType ShootType;
 
         [Tooltip("Minimum duration between two shots")]
         [SerializeField]
@@ -77,7 +74,7 @@ namespace Unity.FPS.Game
         [Header("Ammo Parameters")]
         [Tooltip("Requires ammo")]
         [SerializeField]
-        private bool HasAmmo = false;
+        public bool HasAmmo = false;
         [Tooltip("Number of uses before needing to reload")]
         [SerializeField]
         private int ClipSize = 1;
@@ -115,13 +112,17 @@ namespace Unity.FPS.Game
         [SerializeField]
         private AudioClip ChangeToolSfx;
 
+        [SerializeField]
+        private AudioSource m_ToolAudioSource;
+
+        [Header("Continuous Use")]
         [Tooltip("Continuous Shooting Sound")] public bool UseContinuousUseSound = false;
         [SerializeField]
-        private AudioClip ContinuousShootStartSfx;
+        private AudioClip ContinuousUseStartSfx;
         [SerializeField]
-        private AudioClip ContinuousShootLoopSfx;
+        private AudioClip ContinuousUseLoopSfx;
         [SerializeField]
-        private AudioClip ContinuousShootEndSfx;
+        private AudioClip ContinuousUseEndSfx;
         [SerializeField]
         private AudioSource m_ContinuousUseAudioSource = null;
         private bool m_WantsToShoot = false;
@@ -146,14 +147,11 @@ namespace Unity.FPS.Game
         public Vector3 MuzzleWorldVelocity { get; private set; }
 
         public float GetAmmoNeededToShoot() =>
-            (ShootType != WeaponShootType.Charge ? 1f : Mathf.Max(1f, AmmoUsedOnStartCharge)) /
+            (ShootType != ToolUseType.Charge ? 1f : Mathf.Max(1f, AmmoUsedOnStartCharge)) /
             (MaxAmmo * UsesPerUse);
 
         public int GetCarriedAmmo() => m_CarriedAmmo;
         public int GetCurrentLoadedAmmo() => Mathf.FloorToInt(m_CurrentLoadedAmmo);
-
-        [SerializeField]
-        private AudioSource m_OnUseAudioSource;
 
         public bool IsReloading { get; private set; }
 
@@ -164,15 +162,11 @@ namespace Unity.FPS.Game
             m_CurrentLoadedAmmo = ClipSize;
             m_CarriedAmmo = HasAmmo ? ClipSize : 0;
 
-            m_OnUseAudioSource = GetComponent<AudioSource>();
-            DebugUtility.HandleErrorIfNullGetComponent<AudioSource, WeaponController>(m_OnUseAudioSource, this,
-                gameObject);
-
             if (UseContinuousUseSound)
             {
                 m_ContinuousUseAudioSource = gameObject.AddComponent<AudioSource>();
                 m_ContinuousUseAudioSource.playOnAwake = false;
-                m_ContinuousUseAudioSource.clip = ContinuousShootLoopSfx;
+                m_ContinuousUseAudioSource.clip = ContinuousUseLoopSfx;
                 m_ContinuousUseAudioSource.outputAudioMixerGroup =
                     AudioUtility.GetAudioGroup(AudioUtility.AudioGroups.WeaponShoot);
                 m_ContinuousUseAudioSource.loop = true;
@@ -254,14 +248,14 @@ namespace Unity.FPS.Game
                 {
                     if (!m_ContinuousUseAudioSource.isPlaying)
                     {
-                        m_OnUseAudioSource.PlayOneShot(UseSfx);
-                        m_OnUseAudioSource.PlayOneShot(ContinuousShootStartSfx);
+                        m_ToolAudioSource.PlayOneShot(UseSfx);
+                        m_ToolAudioSource.PlayOneShot(ContinuousUseStartSfx);
                         m_ContinuousUseAudioSource.Play();
                     }
                 }
                 else if (m_ContinuousUseAudioSource.isPlaying)
                 {
-                    m_OnUseAudioSource.PlayOneShot(ContinuousShootEndSfx);
+                    m_ToolAudioSource.PlayOneShot(ContinuousUseEndSfx);
                     m_ContinuousUseAudioSource.Stop();
                 }
             }
@@ -273,7 +267,7 @@ namespace Unity.FPS.Game
 
             if (show && ChangeToolSfx)
             {
-                m_OnUseAudioSource.PlayOneShot(ChangeToolSfx);
+                m_ToolAudioSource.PlayOneShot(ChangeToolSfx);
             }
 
             IsWeaponActive = show;
@@ -292,7 +286,7 @@ namespace Unity.FPS.Game
             m_WantsToShoot = inputDown || inputHeld;
             switch (ShootType)
             {
-                case WeaponShootType.Manual:
+                case ToolUseType.Manual:
                     if (inputDown)
                     {
                         return TryUse();
@@ -300,7 +294,7 @@ namespace Unity.FPS.Game
 
                     return false;
 
-                case WeaponShootType.Automatic:
+                case ToolUseType.Automatic:
                     if (inputHeld)
                     {
                         return TryUse();
@@ -308,7 +302,7 @@ namespace Unity.FPS.Game
 
                     return false;
 
-                case WeaponShootType.Charge:
+                case ToolUseType.Charge:
                     if (inputHeld)
                     {
                         TryBeginCharge();
@@ -381,7 +375,7 @@ namespace Unity.FPS.Game
             // play shoot SFX
             if (UseSfx && !UseContinuousUseSound)
             {
-                m_OnUseAudioSource.PlayOneShot(UseSfx);
+                m_ToolAudioSource.PlayOneShot(UseSfx);
             }
 
             // Trigger attack animation if there is any

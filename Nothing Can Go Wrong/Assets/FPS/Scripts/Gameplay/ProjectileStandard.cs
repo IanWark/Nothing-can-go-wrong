@@ -90,7 +90,7 @@ namespace Unity.FPS.Gameplay
             m_IgnoredColliders.AddRange(ownerColliders);
 
             // Handle case of player shooting (make projectiles not go through walls, and remember center-of-screen trajectory)
-            PlayerWeaponsManager playerWeaponsManager = m_ProjectileBase.Owner.GetComponent<PlayerWeaponsManager>();
+            PlayerToolsManager playerWeaponsManager = m_ProjectileBase.Owner.GetComponent<PlayerToolsManager>();
             if (playerWeaponsManager)
             {
                 m_HasTrajectoryOverride = true;

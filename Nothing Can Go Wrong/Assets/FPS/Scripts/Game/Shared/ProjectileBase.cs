@@ -13,6 +13,7 @@ namespace Unity.FPS.Game
 
         public UnityAction OnShoot;
 
+        /*
         public void Shoot(WeaponController controller)
         {
             Owner = controller.Owner;
@@ -23,5 +24,6 @@ namespace Unity.FPS.Game
 
             OnShoot?.Invoke();
         }
+        */
     }
 }

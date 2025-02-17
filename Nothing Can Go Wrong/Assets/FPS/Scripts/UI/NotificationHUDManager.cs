@@ -14,10 +14,10 @@ namespace Unity.FPS.UI
 
         void Awake()
         {
-            PlayerWeaponsManager playerWeaponsManager = FindFirstObjectByType<PlayerWeaponsManager>();
-            DebugUtility.HandleErrorIfNullFindObject<PlayerWeaponsManager, NotificationHUDManager>(playerWeaponsManager,
+            PlayerToolsManager playerWeaponsManager = FindFirstObjectByType<PlayerToolsManager>();
+            DebugUtility.HandleErrorIfNullFindObject<PlayerToolsManager, NotificationHUDManager>(playerWeaponsManager,
                 this);
-            playerWeaponsManager.OnAddedWeapon += OnPickupWeapon;
+            playerWeaponsManager.OnAddedTool += OnPickupWeapon;
 
             EventManager.AddListener<ObjectiveUpdateEvent>(OnObjectiveUpdateEvent);
         }
@@ -28,10 +28,10 @@ namespace Unity.FPS.UI
                 CreateNotification(evt.NotificationText);
         }
 
-        void OnPickupWeapon(WeaponController weaponController, int index)
+        void OnPickupWeapon(ToolController weaponController, int index)
         {
             if (index != 0)
-                CreateNotification("Picked up weapon : " + weaponController.WeaponName);
+                CreateNotification("Picked up weapon : " + weaponController.ToolName);
         }
 
         void OnUnlockJetpack(bool unlock)

@@ -6,17 +6,17 @@ namespace Unity.FPS.Gameplay
     public class AmmoPickup : Pickup
     {
         [Tooltip("Weapon those bullets are for")]
-        public WeaponController Weapon;
+        public ToolController Weapon;
 
         [Tooltip("Number of bullets the player gets")]
         public int BulletCount = 30;
 
         protected override void OnPicked(PlayerCharacterController byPlayer)
         {
-            PlayerWeaponsManager playerWeaponsManager = byPlayer.GetComponent<PlayerWeaponsManager>();
+            PlayerToolsManager playerWeaponsManager = byPlayer.GetComponent<PlayerToolsManager>();
             if (playerWeaponsManager)
             {
-                WeaponController weapon = playerWeaponsManager.HasWeapon(Weapon);
+                ToolController weapon = playerWeaponsManager.HasTool(Weapon);
                 if (weapon != null)
                 {
                     weapon.AddCarriablePhysicalBullets(BulletCount);

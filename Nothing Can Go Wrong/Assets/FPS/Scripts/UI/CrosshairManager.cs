@@ -11,7 +11,7 @@ namespace Unity.FPS.UI
         public Sprite NullCrosshairSprite;
         public float CrosshairUpdateshrpness = 5f;
 
-        PlayerWeaponsManager m_WeaponsManager;
+        PlayerToolsManager m_WeaponsManager;
         bool m_WasPointingAtEnemy;
         RectTransform m_CrosshairRectTransform;
         CrosshairData m_CrosshairDataDefault;
@@ -20,12 +20,12 @@ namespace Unity.FPS.UI
 
         void Start()
         {
-            m_WeaponsManager = FindFirstObjectByType<PlayerWeaponsManager>();
-            DebugUtility.HandleErrorIfNullFindObject<PlayerWeaponsManager, CrosshairManager>(m_WeaponsManager, this);
+            m_WeaponsManager = FindFirstObjectByType<PlayerToolsManager>();
+            DebugUtility.HandleErrorIfNullFindObject<PlayerToolsManager, CrosshairManager>(m_WeaponsManager, this);
 
-            OnWeaponChanged(m_WeaponsManager.GetActiveWeapon());
+            OnWeaponChanged(m_WeaponsManager.GetActiveTool());
 
-            m_WeaponsManager.OnSwitchedToWeapon += OnWeaponChanged;
+            m_WeaponsManager.OnSwitchedToTool += OnWeaponChanged;
         }
 
         void Update()
@@ -60,7 +60,7 @@ namespace Unity.FPS.UI
                 Time.deltaTime * CrosshairUpdateshrpness) * Vector2.one;
         }
 
-        void OnWeaponChanged(WeaponController newWeapon)
+        void OnWeaponChanged(ToolController newWeapon)
         {
             if (newWeapon)
             {

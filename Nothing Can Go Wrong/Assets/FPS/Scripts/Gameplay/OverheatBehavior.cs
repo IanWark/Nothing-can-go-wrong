@@ -39,7 +39,7 @@ namespace Unity.FPS.Gameplay
         public AnimationCurve AmmoToVolumeRatioCurve;
 
 
-        WeaponController m_Weapon;
+        ToolController m_Weapon;
         AudioSource m_AudioSource;
         List<RendererIndexData> m_OverheatingRenderersData;
         MaterialPropertyBlock m_OverheatMaterialPropertyBlock;
@@ -64,8 +64,8 @@ namespace Unity.FPS.Gameplay
             m_OverheatMaterialPropertyBlock = new MaterialPropertyBlock();
             m_SteamVfxEmissionModule = SteamVfx.emission;
 
-            m_Weapon = GetComponent<WeaponController>();
-            DebugUtility.HandleErrorIfNullGetComponent<WeaponController, OverheatBehavior>(m_Weapon, this, gameObject);
+            m_Weapon = GetComponent<ToolController>();
+            DebugUtility.HandleErrorIfNullGetComponent<ToolController, OverheatBehavior>(m_Weapon, this, gameObject);
 
             m_AudioSource = gameObject.AddComponent<AudioSource>();
             m_AudioSource.clip = CoolingCellsSound;

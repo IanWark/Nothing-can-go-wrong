@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Unity.FPS.Game;
 using UnityEngine;
 using UnityEditor;
+using Unity.FPS.Game;
 
 namespace Unity.FPS.EditorExt
 {
