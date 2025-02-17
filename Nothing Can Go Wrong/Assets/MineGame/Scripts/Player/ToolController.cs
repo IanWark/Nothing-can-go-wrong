@@ -74,7 +74,7 @@ namespace Unity.FPS.Game
         [Header("Ammo Parameters")]
         [Tooltip("Requires ammo")]
         [SerializeField]
-        public bool HasAmmo = false;
+        public bool NeedsAmmo = false;
         [Tooltip("Number of uses before needing to reload")]
         [SerializeField]
         private int ClipSize = 1;
@@ -160,7 +160,7 @@ namespace Unity.FPS.Game
         void Awake()
         {
             m_CurrentLoadedAmmo = ClipSize;
-            m_CarriedAmmo = HasAmmo ? ClipSize : 0;
+            m_CarriedAmmo = NeedsAmmo ? ClipSize : 0;
 
             if (UseContinuousUseSound)
             {
@@ -205,41 +205,6 @@ namespace Unity.FPS.Game
             UpdateContinuousUseSound();
         }
 
-        void UpdateCharge()
-        {
-            if (IsCharging)
-            {
-                if (CurrentCharge < 1f)
-                {
-                    float chargeLeft = 1f - CurrentCharge;
-
-                    // Calculate how much charge ratio to add this frame
-                    float chargeAdded = 0f;
-                    if (MaxChargeDuration <= 0f)
-                    {
-                        chargeAdded = chargeLeft;
-                    }
-                    else
-                    {
-                        chargeAdded = (1f / MaxChargeDuration) * Time.deltaTime;
-                    }
-
-                    chargeAdded = Mathf.Clamp(chargeAdded, 0f, chargeLeft);
-
-                    // See if we can actually add this charge
-                    float ammoThisChargeWouldRequire = chargeAdded * AmmoUsageRateWhileCharging;
-                    if (ammoThisChargeWouldRequire <= m_CurrentLoadedAmmo)
-                    {
-                        // Use ammo based on charge added
-                        UseAmmo(ammoThisChargeWouldRequire);
-
-                        // set current charge ratio
-                        CurrentCharge = Mathf.Clamp01(CurrentCharge + chargeAdded);
-                    }
-                }
-            }
-        }
-
         void UpdateContinuousUseSound()
         {
             if (UseContinuousUseSound)
@@ -271,14 +236,6 @@ namespace Unity.FPS.Game
             }
 
             IsWeaponActive = show;
-        }
-
-        public void UseAmmo(float amount)
-        {
-            m_CurrentLoadedAmmo = Mathf.Clamp(m_CurrentLoadedAmmo - amount, 0f, MaxAmmo);
-            m_CarriedAmmo -= Mathf.RoundToInt(amount);
-            m_CarriedAmmo = Mathf.Clamp(m_CarriedAmmo, 0, MaxAmmo);
-            m_LastTimeShot = Time.time;
         }
 
         public bool HandleShootInputs(bool inputDown, bool inputHeld, bool inputUp)
@@ -327,40 +284,10 @@ namespace Unity.FPS.Game
                 && m_LastTimeShot + DelayBetweenShots < Time.time)
             {
                 HandleShoot();
-                m_CurrentLoadedAmmo -= 1f;
-
-                return true;
-            }
-
-            return false;
-        }
-
-        bool TryBeginCharge()
-        {
-            if (!IsCharging
-                && m_CurrentLoadedAmmo >= AmmoUsedOnStartCharge
-                && Mathf.FloorToInt((m_CurrentLoadedAmmo - AmmoUsedOnStartCharge) * UsesPerUse) > 0
-                && m_LastTimeShot + DelayBetweenShots < Time.time)
-            {
-                UseAmmo(AmmoUsedOnStartCharge);
-
-                LastChargeTriggerTimestamp = Time.time;
-                IsCharging = true;
-
-                return true;
-            }
-
-            return false;
-        }
-
-        bool TryReleaseCharge()
-        {
-            if (IsCharging)
-            {
-                HandleShoot();
-
-                CurrentCharge = 0f;
-                IsCharging = false;
+                if (NeedsAmmo)
+                {
+                    m_CurrentLoadedAmmo -= 1f;
+                }
 
                 return true;
             }
@@ -387,5 +314,85 @@ namespace Unity.FPS.Game
             OnShoot?.Invoke();
             OnShootProcessed?.Invoke();
         }
+
+        #region Charging
+
+        void UpdateCharge()
+        {
+            if (IsCharging)
+            {
+                if (CurrentCharge < 1f)
+                {
+                    float chargeLeft = 1f - CurrentCharge;
+
+                    // Calculate how much charge ratio to add this frame
+                    float chargeAdded = 0f;
+                    if (MaxChargeDuration <= 0f)
+                    {
+                        chargeAdded = chargeLeft;
+                    }
+                    else
+                    {
+                        chargeAdded = (1f / MaxChargeDuration) * Time.deltaTime;
+                    }
+
+                    chargeAdded = Mathf.Clamp(chargeAdded, 0f, chargeLeft);
+
+                    // See if we can actually add this charge
+                    float ammoThisChargeWouldRequire = chargeAdded * AmmoUsageRateWhileCharging;
+                    if (ammoThisChargeWouldRequire <= m_CurrentLoadedAmmo)
+                    {
+                        // Use ammo based on charge added
+                        UseChargedAmmo(ammoThisChargeWouldRequire);
+
+                        // set current charge ratio
+                        CurrentCharge = Mathf.Clamp01(CurrentCharge + chargeAdded);
+                    }
+                }
+            }
+        }
+
+        public void UseChargedAmmo(float amount)
+        {
+            m_CurrentLoadedAmmo = Mathf.Clamp(m_CurrentLoadedAmmo - amount, 0f, MaxAmmo);
+            m_CarriedAmmo -= Mathf.RoundToInt(amount);
+            m_CarriedAmmo = Mathf.Clamp(m_CarriedAmmo, 0, MaxAmmo);
+            m_LastTimeShot = Time.time;
+        }
+
+        bool TryBeginCharge()
+        {
+            if (!IsCharging
+                && m_CurrentLoadedAmmo >= AmmoUsedOnStartCharge
+                && Mathf.FloorToInt((m_CurrentLoadedAmmo - AmmoUsedOnStartCharge) * UsesPerUse) > 0
+                && m_LastTimeShot + DelayBetweenShots < Time.time)
+            {
+                UseChargedAmmo(AmmoUsedOnStartCharge);
+
+                LastChargeTriggerTimestamp = Time.time;
+                IsCharging = true;
+
+                return true;
+            }
+
+            return false;
+        }
+
+        bool TryReleaseCharge()
+        {
+            if (IsCharging)
+            {
+                HandleShoot();
+
+                CurrentCharge = 0f;
+                IsCharging = false;
+
+                return true;
+            }
+
+            return false;
+        }
+
+        #endregion
     }
 }

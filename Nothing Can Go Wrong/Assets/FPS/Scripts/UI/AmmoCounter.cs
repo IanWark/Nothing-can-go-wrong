@@ -66,7 +66,7 @@ namespace Unity.FPS.UI
             m_Weapon = weapon;
             WeaponCounterIndex = weaponIndex;
             WeaponImage.sprite = weapon.ToolIcon;
-            if (!weapon.HasAmmo)
+            if (!weapon.NeedsAmmo)
                 BulletCounter.transform.parent.gameObject.SetActive(false);
             else
                 BulletCounter.text = weapon.GetCarriedAmmo().ToString();
