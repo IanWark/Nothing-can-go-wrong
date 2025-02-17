@@ -92,7 +92,7 @@ MonoBehaviour:
   ShootType: 0
   DelayBetweenShots: 0.5
   UsesPerUse: 1
-  HasAmmo: 0
+  NeedsAmmo: 0
   ClipSize: 1
   MaxAmmo: 8
   AutomaticReleaseOnCharged: 0
@@ -214,9 +214,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 825220459589154871}
     m_Modifications:
+    - target: {fileID: 1482742835904258, guid: 7383308240011be46af1533e2a831403, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1853405025747074, guid: 7383308240011be46af1533e2a831403, type: 3}
       propertyPath: m_Name
       value: SM_Wep_American_Bayonet_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1853405025747074, guid: 7383308240011be46af1533e2a831403, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4025154565648092, guid: 7383308240011be46af1533e2a831403, type: 3}
       propertyPath: m_LocalPosition.x
@@ -256,6 +264,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4025154565648092, guid: 7383308240011be46af1533e2a831403, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64415560254148998, guid: 7383308240011be46af1533e2a831403,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
