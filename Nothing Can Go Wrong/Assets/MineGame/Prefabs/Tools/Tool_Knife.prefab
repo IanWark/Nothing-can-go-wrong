@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 2225486910712267856}
   - component: {fileID: 1625742581275493324}
   - component: {fileID: 8090847488450120274}
+  - component: {fileID: 8474700551355790503}
   m_Layer: 10
   m_Name: Tool_Knife
   m_TagString: Untagged
@@ -80,6 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ToolName: Knife
   ToolIcon: {fileID: 21300000, guid: cab1398a10b307b44b0ffeb0eef23254, type: 3}
+  ToolEffectType: 0
   CrosshairDataDefault:
     CrosshairSprite: {fileID: 21300000, guid: 7bc31e8e98f56aa4a90d63e9d7bec6c5, type: 3}
     CrosshairSize: 10
@@ -100,7 +102,7 @@ MonoBehaviour:
   MaxChargeDuration: 2
   AmmoUsedOnStartCharge: 1
   AmmoUsageRateWhileCharging: 1
-  ToolAnimator: {fileID: 0}
+  ToolAnimator: {fileID: 8474700551355790503}
   UseSfx: {fileID: 8300000, guid: 53d2238f4c4b2aa4f8e559c7af9e0126, type: 3}
   ChangeToolSfx: {fileID: 8300000, guid: 7b83d61917ac1224f942a0609b1221f2, type: 3}
   m_ToolAudioSource: {fileID: 8090847488450120274}
@@ -207,6 +209,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &8474700551355790503
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2225486910712267859}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0d16d6895f69ec2488d678bbb549f5e5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &6461959883049805732
 PrefabInstance:
   m_ObjectHideFlags: 0
