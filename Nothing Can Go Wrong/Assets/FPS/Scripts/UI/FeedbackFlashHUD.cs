@@ -109,7 +109,7 @@ namespace Unity.FPS.UI
             FlashCanvasGroup.gameObject.SetActive(true);
         }
 
-        void OnTakeDamage(float dmg, GameObject damageSource)
+        void OnTakeDamage(float dmg)
         {
             ResetFlash();
             FlashImage.color = DamageFlashColor;
