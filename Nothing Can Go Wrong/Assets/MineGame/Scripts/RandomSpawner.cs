@@ -7,8 +7,14 @@ public class RandomSpawner : MonoBehaviour
     [SerializeField]
     private float SpawnChance = 0.33f;
 
+    [SerializeField]
+    private GameObject ObjectToSpawn;
+
     private void Awake()
     {
-        // Spawn the thing
+        if (Random.Range(0f, 1f) > SpawnChance)
+        {
+            Destroy(ObjectToSpawn);
+        }
     }
 }
