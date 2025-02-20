@@ -94,11 +94,14 @@ MonoBehaviour:
   ToolAnimator: {fileID: 8474700551355790503}
   ChangeToolSfx: {fileID: 8300000, guid: 7b83d61917ac1224f942a0609b1221f2, type: 3}
   m_ToolAudioSource: {fileID: 8090847488450120274}
-  ToolEffectType: 0
+  m_ToolEffectType: 0
+  LayersToIgnore:
+    serializedVersion: 2
+    m_Bits: 100352
   ShootType: 0
   Reach: 2
   DelayBetweenShots: 0.5
-  ClipSize: 1
+  StartingAmmo: 4
   MaxAmmo: 8
   UseSfx: {fileID: 8300000, guid: edb6eaaf36222f9429a9b2214ec69ad0, type: 3}
   UseContinuousUseSound: 0

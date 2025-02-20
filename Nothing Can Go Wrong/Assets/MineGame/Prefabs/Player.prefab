@@ -444,7 +444,7 @@ MonoBehaviour:
   GravityDownForce: 20
   GroundCheckLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 65537
   GroundCheckDistance: 1
   MaxSpeedOnGround: 6.5
   MovementSharpnessOnGround: 15

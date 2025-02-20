@@ -50,13 +50,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AreaOfEffectRadius: 5
   BaseDamage: 51
+  ExplosionSound: {fileID: 8300000, guid: fc96116dc3c141440aabb5605744fea2, type: 3}
+  DebugAreaOfEffectColor: {r: 0.5, g: 0, b: 0, a: 0.5}
   LaunchForce: 6
   LaunchTimeSeconds: 0.75
   LaunchSound: {fileID: 8300000, guid: 419336aa8912ae0468e104596863a0a1, type: 3}
-  ExplosionSound: {fileID: 8300000, guid: fc96116dc3c141440aabb5605744fea2, type: 3}
   Rigidbody: {fileID: 2681095919600754972}
   AudioSource: {fileID: 6448448304034385901}
-  DebugAreaOfEffectColor: {r: 0.5, g: 0, b: 0, a: 0.5}
 --- !u!82 &6448448304034385901
 AudioSource:
   m_ObjectHideFlags: 0
@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 5049739809732133655}
   - component: {fileID: 1485178168702958645}
   - component: {fileID: 2354192045295152985}
-  m_Layer: 14
+  m_Layer: 15
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -433,6 +433,7 @@ GameObject:
   - component: {fileID: 3303668110683356718}
   - component: {fileID: 4237845352908218562}
   - component: {fileID: 6049889691820176000}
+  - component: {fileID: 2925246585803828741}
   m_Layer: 14
   m_Name: Mine Body
   m_TagString: Untagged
@@ -527,8 +528,24 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43316882683119682, guid: f74b9deadaf678846b34a3344fcce24a, type: 2}
+--- !u!114 &2925246585803828741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3971863094986685796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f754358b2b79a3f4a96f0c87e438c743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AudioClipsForEffectType:
+  - m_ToolEffectType: 0
+    m_AudioClip: {fileID: 8300000, guid: c5955b1ca51d47245ae5e5e10395d910, type: 3}
+  m_AudioSource: {fileID: 6448448304034385901}

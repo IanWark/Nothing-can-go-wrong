@@ -24,7 +24,11 @@ namespace Unity.FPS.Game
         [Header("Click To Use Tool")]
         [Tooltip("If the tool hits an object, it sends a message saying the object was hit by this type")]
         [SerializeField]
-        protected ToolEffectType m_ToolEffectType;
+        private ToolEffectType m_ToolEffectType;
+
+        [Tooltip("Physics layers that will be ignored when raycasting with this tool")]
+        [SerializeField]
+        private LayerMask LayersToIgnore;
 
         [Header("Shoot Parameters")]
         [Tooltip("The type of weapon wil affect how it shoots")]
@@ -152,7 +156,7 @@ namespace Unity.FPS.Game
             // Cast a ray to see if we hit anything
             Vector3 origin = ToolCamera.transform.position;
             Vector3 direction = ToolCamera.transform.TransformDirection(Vector3.forward);
-            LayerMask layerMask = LayerMask.GetMask("Default");
+            LayerMask layerMask = ~LayersToIgnore;
             if (Physics.Raycast(origin, direction, out RaycastHit hit, Reach, layerMask))
             {
                 // Try to get the hit object as an IInteractable

@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 5049739809732133655}
   - component: {fileID: 1485178168702958645}
   - component: {fileID: 2354192045295152985}
-  m_Layer: 14
+  m_Layer: 15
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,14 +303,40 @@ PrefabInstance:
     - target: {fileID: 64232292466387758, guid: 255a3e1928e37b04290d180ba40ff7dd,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 95152117440363414, guid: 255a3e1928e37b04290d180ba40ff7dd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1639136701007868, guid: 255a3e1928e37b04290d180ba40ff7dd,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7652228269836820556}
   m_SourcePrefab: {fileID: 100100000, guid: 255a3e1928e37b04290d180ba40ff7dd, type: 3}
+--- !u!1 &8351643861137290511 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1639136701007868, guid: 255a3e1928e37b04290d180ba40ff7dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 8350567743118226163}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7652228269836820556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8351643861137290511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f754358b2b79a3f4a96f0c87e438c743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AudioClipsForEffectType:
+  - m_ToolEffectType: 0
+    m_AudioClip: {fileID: 8300000, guid: c5955b1ca51d47245ae5e5e10395d910, type: 3}
+  m_AudioSource: {fileID: 6448448304034385901}
 --- !u!4 &8354946379047411997 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4950455036351470, guid: 255a3e1928e37b04290d180ba40ff7dd,
