@@ -114,7 +114,8 @@ namespace Unity.FPS.Gameplay
 
             if (activeTool != null && m_WeaponSwitchState == ToolSwitchState.Up)
             {
-                IsAiming = activeTool.HandleInputs(m_InputHandler);
+                IsAiming = m_InputHandler.GetAimInputHeld();
+                activeTool.HandleInputs(m_InputHandler);
             }
 
             // Tool switch handling

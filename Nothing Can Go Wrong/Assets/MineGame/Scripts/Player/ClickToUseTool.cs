@@ -2,6 +2,7 @@
 using Unity.FPS.Gameplay;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 using static Unity.FPS.Gameplay.PlayerToolsManager;
 
 namespace Unity.FPS.Game
@@ -23,7 +24,7 @@ namespace Unity.FPS.Game
         [Header("Click To Use Tool")]
         [Tooltip("If the tool hits an object, it sends a message saying the object was hit by this type")]
         [SerializeField]
-        public ToolEffectType ToolEffectType;
+        protected ToolEffectType m_ToolEffectType;
 
         [Header("Shoot Parameters")]
         [Tooltip("The type of weapon wil affect how it shoots")]
@@ -39,9 +40,9 @@ namespace Unity.FPS.Game
         private float DelayBetweenShots = 0.5f;
 
         [Header("Ammo Parameters")]
-        [Tooltip("Number of uses before needing to reload")]
+        [Tooltip("Aamount of ammo you start with")]
         [SerializeField]
-        private int ClipSize = 1;
+        private int StartingAmmo = 4;
         [Tooltip("Maximum amount of ammo total")]
         [SerializeField]
         private int MaxAmmo = 8;
@@ -69,23 +70,45 @@ namespace Unity.FPS.Game
         private event Action OnShootProcessed;
 
         private int m_CarriedAmmo;
-        private float m_CurrentLoadedAmmo;
         private float m_LastTimeShot = Mathf.NegativeInfinity;
-        public float LastChargeTriggerTimestamp { get; private set; }
-
-        public override float GetCurrentAmmoRatio() { return GetCurrentLoadedAmmo() / (float)ClipSize; } 
-
-        public override int GetCarriedAmmo() => m_CarriedAmmo;
-        public override int GetCurrentLoadedAmmo() => Mathf.FloorToInt(m_CurrentLoadedAmmo);
-
-        public bool IsReloading { get; private set; }
 
         private const string k_AnimUseParameter = "Use";
 
-        void Awake()
+        public override int GetCarriedAmmo() => m_CarriedAmmo;
+        public override void AddCarriableAmmo(int count) => m_CarriedAmmo = Mathf.Max(m_CarriedAmmo + count, MaxAmmo);
+
+        /// <summary>
+        /// Handle inputs specific to the tool.
+        /// </summary>
+        public override void HandleInputs(PlayerInputHandler inputHandler)
         {
-            m_CurrentLoadedAmmo = ClipSize;
-            m_CarriedAmmo = NeedsAmmo ? ClipSize : 0;
+            bool inputDown = inputHandler.GetFireInputDown();
+            bool inputHeld = inputHandler.GetFireInputHeld();
+
+            m_WantsToShoot = inputDown || inputHeld;
+            switch (ShootType)
+            {
+                case ToolUseType.Manual:
+                    if (inputDown)
+                    {
+                       TryUse();
+                    }
+
+                    return;
+
+                case ToolUseType.Automatic:
+                    if (inputHeld)
+                    {
+                        TryUse();
+                    }
+
+                    return;
+            }
+        }
+
+        private void Awake()
+        {
+            m_CarriedAmmo = NeedsAmmo ? StartingAmmo : 0;
 
             if (UseContinuousUseSound)
             {
@@ -98,92 +121,11 @@ namespace Unity.FPS.Game
             }
         }
 
-        public override void AddCarriablePhysicalBullets(int count) => m_CarriedAmmo = Mathf.Max(m_CarriedAmmo + count, MaxAmmo);
-
-        void PlaySFX(AudioClip sfx) => AudioUtility.CreateSFX(sfx, transform.position, AudioUtility.AudioGroups.WeaponShoot, 0.0f);
-
-        void Reload()
+        private bool TryUse()
         {
-            if (m_CarriedAmmo > 0)
-            {
-                m_CurrentLoadedAmmo = Mathf.Min(m_CarriedAmmo, ClipSize);
-            }
-
-            IsReloading = false;
-        }
-
-        /// <summary>
-        /// Handle inputs specific to the tool.
-        /// </summary>
-        /// <returns>Whether we should be aiming.</returns>
-        public override bool HandleInputs(PlayerInputHandler inputHandler)
-        {
-            if (inputHandler.GetReloadButtonDown() && GetCurrentAmmoRatio() < 1.0f)
-            {
-                StartReloadAnimation();
-            }
-
-            if (IsReloading)
-                return false;
-
-            // handle shooting
-            bool hasFired = HandleClickInputs(
-                inputHandler.GetFireInputDown(),
-                inputHandler.GetFireInputHeld(),
-                inputHandler.GetFireInputReleased());
-
-            return inputHandler.GetAimInputHeld();
-        }
-
-        private bool HandleClickInputs(bool inputDown, bool inputHeld, bool inputUp)
-        {
-            m_WantsToShoot = inputDown || inputHeld;
-            switch (ShootType)
-            {
-                case ToolUseType.Manual:
-                    if (inputDown)
-                    {
-                        return TryUse();
-                    }
-
-                    return false;
-
-                case ToolUseType.Automatic:
-                    if (inputHeld)
-                    {
-                        return TryUse();
-                    }
-
-                    return false;
-
-                default:
-                    return false;
-            }
-        }
-
-
-        private void StartReloadAnimation()
-        {
-            if (m_CurrentLoadedAmmo < m_CarriedAmmo)
-            {
-                if (ToolAnimator)
-                {
-                    ToolAnimator.SetTrigger("Reload");
-                }
-                IsReloading = true;
-            }
-        }
-
-        bool TryUse()
-        {
-            if (m_CurrentLoadedAmmo >= 1f
-                && m_LastTimeShot + DelayBetweenShots < Time.time)
+            if (m_LastTimeShot + DelayBetweenShots < Time.time)
             {
                 HandleShoot();
-                if (NeedsAmmo)
-                {
-                    m_CurrentLoadedAmmo -= 1f;
-                }
 
                 return true;
             }
@@ -191,7 +133,7 @@ namespace Unity.FPS.Game
             return false;
         }
 
-        void HandleShoot()
+        private void HandleShoot()
         {
             m_LastTimeShot = Time.time;
 
@@ -218,7 +160,7 @@ namespace Unity.FPS.Game
                 if (interactable != null)
                 {
                     // Let the object know it was hit by a tool of this type.
-                    interactable.Interact(ToolEffectType);
+                    interactable.Interact(m_ToolEffectType);
                 }
 
                 Debug.DrawRay(origin, direction * hit.distance, Color.yellow, DelayBetweenShots);
@@ -243,7 +185,7 @@ namespace Unity.FPS.Game
         {
             if (UseContinuousUseSound)
             {
-                if (m_WantsToShoot && m_CurrentLoadedAmmo >= 1f)
+                if (m_WantsToShoot)
                 {
                     if (!m_ContinuousUseAudioSource.isPlaying)
                     {

@@ -76,17 +76,14 @@ namespace Unity.FPS.Game
 
         public Camera ToolCamera { get; set; }
 
-        public abstract float GetCurrentAmmoRatio();
         public abstract int GetCarriedAmmo();
-        public abstract int GetCurrentLoadedAmmo();
 
-        public abstract void AddCarriablePhysicalBullets(int count);
+        public abstract void AddCarriableAmmo(int count);
 
         /// <summary>
         /// Handle inputs specific to the tool.
         /// </summary>
-        /// <returns>Whether we should be aiming.</returns>
-        public abstract bool HandleInputs(PlayerInputHandler inputHandler);
+        public abstract void HandleInputs(PlayerInputHandler inputHandler);
 
         /// <summary>
         /// What happens on switching to or from this tool.

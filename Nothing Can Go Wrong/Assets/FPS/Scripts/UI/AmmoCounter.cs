@@ -26,9 +26,6 @@ namespace Unity.FPS.UI
         [Tooltip("Text for Bullet Counter")] 
         public TextMeshProUGUI BulletCounter;
 
-        [Tooltip("Reload Text for Weapons with physical bullets")]
-        public RectTransform Reload;
-
         [Header("Selection")] [Range(0, 1)] [Tooltip("Opacity when weapon not selected")]
         public float UnselectedOpacity = 0.5f;
 
@@ -71,7 +68,6 @@ namespace Unity.FPS.UI
             else
                 BulletCounter.text = weapon.GetCarriedAmmo().ToString();
 
-            Reload.gameObject.SetActive(false);
             m_PlayerWeaponsManager = FindFirstObjectByType<PlayerToolsManager>();
             DebugUtility.HandleErrorIfNullFindObject<PlayerToolsManager, AmmoCounter>(m_PlayerWeaponsManager, this);
 
@@ -82,10 +78,6 @@ namespace Unity.FPS.UI
 
         void Update()
         {
-            float currentFillRatio = m_Weapon.GetCurrentAmmoRatio();
-            AmmoFillImage.fillAmount = Mathf.Lerp(AmmoFillImage.fillAmount, currentFillRatio,
-                Time.deltaTime * AmmoFillMovementSharpness);
-
             BulletCounter.text = m_Weapon.GetCarriedAmmo().ToString();
 
             bool isActiveWeapon = m_Weapon == m_PlayerWeaponsManager.GetActiveTool();
@@ -95,10 +87,6 @@ namespace Unity.FPS.UI
             transform.localScale = Vector3.Lerp(transform.localScale, isActiveWeapon ? Vector3.one : UnselectedScale,
                 Time.deltaTime * 10);
             ControlKeysRoot.SetActive(!isActiveWeapon);
-
-            FillBarColorChange.UpdateVisual(currentFillRatio);
-
-            Reload.gameObject.SetActive(m_Weapon.GetCarriedAmmo() > 0 && m_Weapon.GetCurrentLoadedAmmo() == 0 && m_Weapon.IsToolActive);
         }
 
         void Destroy()
