@@ -383,9 +383,8 @@ GameObject:
   - component: {fileID: 1360575517897679518}
   - component: {fileID: 4962869611454771873}
   - component: {fileID: 3122855503829242450}
-  - component: {fileID: 4205022973215787166}
   - component: {fileID: 1272397862697293493}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
@@ -485,7 +484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 100
-  CriticalHealthRatio: 0.5
+  CriticalHealthRatio: 0.6
 --- !u!114 &4962869611454771873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,20 +540,6 @@ CharacterController:
   m_SkinWidth: 0.001
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &4205022973215787166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7253983127304857660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9b0ce1bb69c96b49a7ac1098a7f5796, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DamageMultiplier: 1
-  SensibilityToSelfdamage: 0.25
 --- !u!82 &1272397862697293493
 AudioSource:
   m_ObjectHideFlags: 0
@@ -760,7 +745,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 2871
+    m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0

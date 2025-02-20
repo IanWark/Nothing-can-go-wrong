@@ -16,7 +16,7 @@ namespace Unity.FPS.Game
             m_Health.OnDamaged += OnDamaged;
         }
 
-        void OnDamaged(float damage, GameObject damageSource)
+        void OnDamaged(float damage)
         {
             // TODO: damage reaction
         }
