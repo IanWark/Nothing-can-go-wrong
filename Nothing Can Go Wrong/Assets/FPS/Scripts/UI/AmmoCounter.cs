@@ -77,13 +77,13 @@ namespace Unity.FPS.UI
 
             WeaponIndexText.text = (WeaponCounterIndex + 1).ToString();
 
-            FillBarColorChange.Initialize(1f, m_Weapon.GetAmmoNeededToShoot());
+            FillBarColorChange.Initialize(1f, 1);
         }
 
         void Update()
         {
-            float currenFillRatio = m_Weapon.CurrentAmmoRatio;
-            AmmoFillImage.fillAmount = Mathf.Lerp(AmmoFillImage.fillAmount, currenFillRatio,
+            float currentFillRatio = m_Weapon.GetCurrentAmmoRatio();
+            AmmoFillImage.fillAmount = Mathf.Lerp(AmmoFillImage.fillAmount, currentFillRatio,
                 Time.deltaTime * AmmoFillMovementSharpness);
 
             BulletCounter.text = m_Weapon.GetCarriedAmmo().ToString();
@@ -96,9 +96,9 @@ namespace Unity.FPS.UI
                 Time.deltaTime * 10);
             ControlKeysRoot.SetActive(!isActiveWeapon);
 
-            FillBarColorChange.UpdateVisual(currenFillRatio);
+            FillBarColorChange.UpdateVisual(currentFillRatio);
 
-            Reload.gameObject.SetActive(m_Weapon.GetCarriedAmmo() > 0 && m_Weapon.GetCurrentLoadedAmmo() == 0 && m_Weapon.IsWeaponActive);
+            Reload.gameObject.SetActive(m_Weapon.GetCarriedAmmo() > 0 && m_Weapon.GetCurrentLoadedAmmo() == 0 && m_Weapon.IsToolActive);
         }
 
         void Destroy()

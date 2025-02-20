@@ -498,7 +498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingTools:
-  - {fileID: 1625742581275493324, guid: 78d794ae06babbd4c95e67a10dfd3310, type: 3}
+  - {fileID: 5757150367964262749, guid: 78d794ae06babbd4c95e67a10dfd3310, type: 3}
   ToolCamera: {fileID: 2286125971047457827}
   WeaponParentSocket: {fileID: 3891163784698469781}
   DefaultWeaponPosition: {fileID: 4354021110288562838}

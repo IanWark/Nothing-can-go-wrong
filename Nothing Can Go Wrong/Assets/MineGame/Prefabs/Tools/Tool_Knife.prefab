@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2225486910712267856}
-  - component: {fileID: 1625742581275493324}
+  - component: {fileID: 5757150367964262749}
   - component: {fileID: 8090847488450120274}
   - component: {fileID: 8474700551355790503}
   m_Layer: 10
@@ -67,7 +67,7 @@ Transform:
   - {fileID: 825220459589154871}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1625742581275493324
+--- !u!114 &5757150367964262749
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -76,36 +76,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 2225486910712267859}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b0e6a0ae9e6a74ab066a8310636f2a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5bcc4e875625ebb4299592cc1471e9ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ToolName: Knife
   ToolIcon: {fileID: 21300000, guid: cab1398a10b307b44b0ffeb0eef23254, type: 3}
-  ToolEffectType: 0
   CrosshairDataDefault:
-    CrosshairSprite: {fileID: 21300000, guid: 7bc31e8e98f56aa4a90d63e9d7bec6c5, type: 3}
+    CrosshairSprite: {fileID: 21300000, guid: b53806bfbed2e864aadc0684565ed71d, type: 3}
     CrosshairSize: 10
     CrosshairColor: {r: 1, g: 1, b: 1, a: 1}
   CrosshairDataTargetInSight:
-    CrosshairSprite: {fileID: 21300000, guid: 7bc31e8e98f56aa4a90d63e9d7bec6c5, type: 3}
+    CrosshairSprite: {fileID: 21300000, guid: b53806bfbed2e864aadc0684565ed71d, type: 3}
     CrosshairSize: 10
     CrosshairColor: {r: 1, g: 1, b: 1, a: 1}
   ToolRoot: {fileID: 1505447205160222267}
+  NeedsAmmo: 0
+  ToolAnimator: {fileID: 8474700551355790503}
+  ChangeToolSfx: {fileID: 8300000, guid: 7b83d61917ac1224f942a0609b1221f2, type: 3}
+  m_ToolAudioSource: {fileID: 8090847488450120274}
+  ToolEffectType: 0
   ShootType: 0
   Reach: 2
   DelayBetweenShots: 0.5
-  UsesPerUse: 1
-  NeedsAmmo: 0
   ClipSize: 1
   MaxAmmo: 8
-  AutomaticReleaseOnCharged: 0
-  MaxChargeDuration: 2
-  AmmoUsedOnStartCharge: 1
-  AmmoUsageRateWhileCharging: 1
-  ToolAnimator: {fileID: 8474700551355790503}
   UseSfx: {fileID: 8300000, guid: edb6eaaf36222f9429a9b2214ec69ad0, type: 3}
-  ChangeToolSfx: {fileID: 8300000, guid: 7b83d61917ac1224f942a0609b1221f2, type: 3}
-  m_ToolAudioSource: {fileID: 8090847488450120274}
   UseContinuousUseSound: 0
   ContinuousUseStartSfx: {fileID: 0}
   ContinuousUseLoopSfx: {fileID: 0}

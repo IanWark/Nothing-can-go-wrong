@@ -1,0 +1,263 @@
+﻿using System;
+using Unity.FPS.Gameplay;
+using UnityEngine;
+using UnityEngine.Events;
+using static Unity.FPS.Gameplay.PlayerToolsManager;
+
+namespace Unity.FPS.Game
+{
+    public enum ToolUseType
+    {
+        Manual,
+        Automatic,
+    }
+
+    public enum ToolEffectType
+    {
+        Knife,
+    }
+
+    [RequireComponent(typeof(AudioSource))]
+    public class ClickToUseTool : ToolController
+    {
+        [Header("Click To Use Tool")]
+        [Tooltip("If the tool hits an object, it sends a message saying the object was hit by this type")]
+        [SerializeField]
+        public ToolEffectType ToolEffectType;
+
+        [Header("Shoot Parameters")]
+        [Tooltip("The type of weapon wil affect how it shoots")]
+        [SerializeField]
+        private ToolUseType ShootType;
+
+        [SerializeField]
+        [Tooltip("How far the tool can reach.")]
+        private float Reach = 1f;
+
+        [Tooltip("Minimum duration between two shots")]
+        [SerializeField]
+        private float DelayBetweenShots = 0.5f;
+
+        [Header("Ammo Parameters")]
+        [Tooltip("Number of uses before needing to reload")]
+        [SerializeField]
+        private int ClipSize = 1;
+        [Tooltip("Maximum amount of ammo total")]
+        [SerializeField]
+        private int MaxAmmo = 8;
+
+        [Header("Audio & Visual")]
+        [Tooltip("sound played when used")]
+        [SerializeField]
+        private AudioClip UseSfx;
+
+        [Header("Continuous Use")]
+        [Tooltip("Continuous Shooting Sound")] public bool UseContinuousUseSound = false;
+        [SerializeField]
+        private AudioClip ContinuousUseStartSfx;
+        [SerializeField]
+        private AudioClip ContinuousUseLoopSfx;
+        [SerializeField]
+        private AudioClip ContinuousUseEndSfx;
+        [SerializeField]
+        private AudioSource m_ContinuousUseAudioSource = null;
+        private bool m_WantsToShoot = false;
+
+        [SerializeField]
+        private UnityAction OnShoot;
+        [SerializeField]
+        private event Action OnShootProcessed;
+
+        private int m_CarriedAmmo;
+        private float m_CurrentLoadedAmmo;
+        private float m_LastTimeShot = Mathf.NegativeInfinity;
+        public float LastChargeTriggerTimestamp { get; private set; }
+
+        public override float GetCurrentAmmoRatio() { return GetCurrentLoadedAmmo() / (float)ClipSize; } 
+
+        public override int GetCarriedAmmo() => m_CarriedAmmo;
+        public override int GetCurrentLoadedAmmo() => Mathf.FloorToInt(m_CurrentLoadedAmmo);
+
+        public bool IsReloading { get; private set; }
+
+        private const string k_AnimUseParameter = "Use";
+
+        void Awake()
+        {
+            m_CurrentLoadedAmmo = ClipSize;
+            m_CarriedAmmo = NeedsAmmo ? ClipSize : 0;
+
+            if (UseContinuousUseSound)
+            {
+                m_ContinuousUseAudioSource = gameObject.AddComponent<AudioSource>();
+                m_ContinuousUseAudioSource.playOnAwake = false;
+                m_ContinuousUseAudioSource.clip = ContinuousUseLoopSfx;
+                m_ContinuousUseAudioSource.outputAudioMixerGroup =
+                    AudioUtility.GetAudioGroup(AudioUtility.AudioGroups.WeaponShoot);
+                m_ContinuousUseAudioSource.loop = true;
+            }
+        }
+
+        public override void AddCarriablePhysicalBullets(int count) => m_CarriedAmmo = Mathf.Max(m_CarriedAmmo + count, MaxAmmo);
+
+        void PlaySFX(AudioClip sfx) => AudioUtility.CreateSFX(sfx, transform.position, AudioUtility.AudioGroups.WeaponShoot, 0.0f);
+
+        void Reload()
+        {
+            if (m_CarriedAmmo > 0)
+            {
+                m_CurrentLoadedAmmo = Mathf.Min(m_CarriedAmmo, ClipSize);
+            }
+
+            IsReloading = false;
+        }
+
+        /// <summary>
+        /// Handle inputs specific to the tool.
+        /// </summary>
+        /// <returns>Whether we should be aiming.</returns>
+        public override bool HandleInputs(PlayerInputHandler inputHandler)
+        {
+            if (inputHandler.GetReloadButtonDown() && GetCurrentAmmoRatio() < 1.0f)
+            {
+                StartReloadAnimation();
+            }
+
+            if (IsReloading)
+                return false;
+
+            // handle shooting
+            bool hasFired = HandleClickInputs(
+                inputHandler.GetFireInputDown(),
+                inputHandler.GetFireInputHeld(),
+                inputHandler.GetFireInputReleased());
+
+            return inputHandler.GetAimInputHeld();
+        }
+
+        private bool HandleClickInputs(bool inputDown, bool inputHeld, bool inputUp)
+        {
+            m_WantsToShoot = inputDown || inputHeld;
+            switch (ShootType)
+            {
+                case ToolUseType.Manual:
+                    if (inputDown)
+                    {
+                        return TryUse();
+                    }
+
+                    return false;
+
+                case ToolUseType.Automatic:
+                    if (inputHeld)
+                    {
+                        return TryUse();
+                    }
+
+                    return false;
+
+                default:
+                    return false;
+            }
+        }
+
+
+        private void StartReloadAnimation()
+        {
+            if (m_CurrentLoadedAmmo < m_CarriedAmmo)
+            {
+                if (ToolAnimator)
+                {
+                    ToolAnimator.SetTrigger("Reload");
+                }
+                IsReloading = true;
+            }
+        }
+
+        bool TryUse()
+        {
+            if (m_CurrentLoadedAmmo >= 1f
+                && m_LastTimeShot + DelayBetweenShots < Time.time)
+            {
+                HandleShoot();
+                if (NeedsAmmo)
+                {
+                    m_CurrentLoadedAmmo -= 1f;
+                }
+
+                return true;
+            }
+
+            return false;
+        }
+
+        void HandleShoot()
+        {
+            m_LastTimeShot = Time.time;
+
+            // play shoot SFX
+            if (UseSfx && !UseContinuousUseSound)
+            {
+                m_ToolAudioSource.PlayOneShot(UseSfx);
+            }
+
+            // Trigger attack animation if there is any
+            if (ToolAnimator)
+            {
+                ToolAnimator.SetTrigger(k_AnimUseParameter);
+            }
+
+            // Cast a ray to see if we hit anything
+            Vector3 origin = ToolCamera.transform.position;
+            Vector3 direction = ToolCamera.transform.TransformDirection(Vector3.forward);
+            LayerMask layerMask = LayerMask.GetMask("Default");
+            if (Physics.Raycast(origin, direction, out RaycastHit hit, Reach, layerMask))
+            {
+                // Try to get the hit object as an IInteractable
+                IInteractable interactable = hit.collider.gameObject.GetComponent<IInteractable>();
+                if (interactable != null)
+                {
+                    // Let the object know it was hit by a tool of this type.
+                    interactable.Interact(ToolEffectType);
+                }
+
+                Debug.DrawRay(origin, direction * hit.distance, Color.yellow, DelayBetweenShots);
+                Debug.Log($"Did Hit: {hit.collider.gameObject}");
+            }
+            else
+            {
+                Debug.DrawRay(origin, direction * Reach, Color.white, DelayBetweenShots);
+                Debug.Log("Did not Hit");
+            }
+
+            OnShoot?.Invoke();
+            OnShootProcessed?.Invoke();
+        }
+
+        private void Update()
+        {
+            UpdateContinuousUseSound();
+        }
+
+        private void UpdateContinuousUseSound()
+        {
+            if (UseContinuousUseSound)
+            {
+                if (m_WantsToShoot && m_CurrentLoadedAmmo >= 1f)
+                {
+                    if (!m_ContinuousUseAudioSource.isPlaying)
+                    {
+                        m_ToolAudioSource.PlayOneShot(UseSfx);
+                        m_ToolAudioSource.PlayOneShot(ContinuousUseStartSfx);
+                        m_ContinuousUseAudioSource.Play();
+                    }
+                }
+                else if (m_ContinuousUseAudioSource.isPlaying)
+                {
+                    m_ToolAudioSource.PlayOneShot(ContinuousUseEndSfx);
+                    m_ContinuousUseAudioSource.Stop();
+                }
+            }
+        }
+    }
+}

@@ -109,33 +109,16 @@ namespace Unity.FPS.Gameplay
 
         void Update()
         {
-            // shoot handling
-            ToolController activeWeapon = GetActiveTool();
+            // Tool input handling
+            ToolController activeTool = GetActiveTool();
 
-            if (activeWeapon != null && activeWeapon.IsReloading)
-                return;
-
-            if (activeWeapon != null && m_WeaponSwitchState == ToolSwitchState.Up)
+            if (activeTool != null && m_WeaponSwitchState == ToolSwitchState.Up)
             {
-                if (m_InputHandler.GetReloadButtonDown() && activeWeapon.CurrentAmmoRatio < 1.0f)
-                {
-                    IsAiming = false;
-                    activeWeapon.StartReloadAnimation();
-                    return;
-                }
-                // handle aiming down sights
-                IsAiming = m_InputHandler.GetAimInputHeld();
-
-                // handle shooting
-                bool hasFired = activeWeapon.HandleShootInputs(
-                    m_InputHandler.GetFireInputDown(),
-                    m_InputHandler.GetFireInputHeld(),
-                    m_InputHandler.GetFireInputReleased());
+                IsAiming = activeTool.HandleInputs(m_InputHandler);
             }
 
-            // weapon switch handling
+            // Tool switch handling
             if (!IsAiming &&
-                (activeWeapon == null || !activeWeapon.IsCharging) &&
                 (m_WeaponSwitchState == ToolSwitchState.Up || m_WeaponSwitchState == ToolSwitchState.Down))
             {
                 int switchWeaponInput = m_InputHandler.GetSwitchWeaponInput();
@@ -157,7 +140,7 @@ namespace Unity.FPS.Gameplay
 
             // Pointing at enemy handling
             IsPointingAtEnemy = false;
-            if (activeWeapon)
+            if (activeTool)
             {
                 if (Physics.Raycast(ToolCamera.transform.position, ToolCamera.transform.forward, out RaycastHit hit,
                     1000, -1, QueryTriggerInteraction.Ignore))
@@ -409,7 +392,7 @@ namespace Unity.FPS.Gameplay
                     // Set owner to this gameObject so the tool can alter projectile/damage logic accordingly
                     toolInstance.Owner = gameObject;
                     toolInstance.SourcePrefab = toolPrefab.gameObject;
-                    toolInstance.SetToolCamera(ToolCamera);
+                    toolInstance.ToolCamera = ToolCamera;
                     toolInstance.ShowTool(false);
 
                     // Assign the first person layer to the tool
