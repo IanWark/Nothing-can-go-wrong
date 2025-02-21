@@ -31,7 +31,9 @@ namespace Unity.FPS.Game
                 }
                 else
                 {
-                    Transform root = collider.transform.root;
+                    // This assumes that the collider is exactly 1 below the root of the object.
+                    // Which is not really a safe assumption to make!
+                    Transform root = collider.transform.parent;
 
                     // If it is lower than the new hole, move it up to our Y.
                     float newY = Mathf.Max(root.transform.position.y, transform.position.y);
