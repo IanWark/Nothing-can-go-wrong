@@ -601,6 +601,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AudioClipsForEffectType:
-  - m_ToolEffectType: 0
+  - m_ToolEffectType: -1
     m_AudioClip: {fileID: 8300000, guid: c5955b1ca51d47245ae5e5e10395d910, type: 3}
   m_AudioSource: {fileID: 6448448304034385901}
