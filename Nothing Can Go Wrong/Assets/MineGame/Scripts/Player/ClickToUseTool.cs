@@ -160,8 +160,8 @@ namespace Unity.FPS.Game
             if (Physics.Raycast(origin, direction, out RaycastHit hit, Reach, layerMask))
             {
                 // Try to get the hit object as an IInteractable
-                IInteractable interactable = hit.collider.gameObject.GetComponent<IInteractable>();
-                if (interactable != null)
+                IInteractable[] interactables = hit.collider.gameObject.GetComponents<IInteractable>();
+                foreach (IInteractable interactable in interactables)
                 {
                     // Let the object know it was hit by a tool of this type.
                     interactable.Interact(m_ToolEffectType);

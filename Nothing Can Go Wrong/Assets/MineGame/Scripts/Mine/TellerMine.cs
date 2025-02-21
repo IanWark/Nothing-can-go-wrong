@@ -2,10 +2,8 @@ using UnityEngine;
 
 public class TellerMine : Explosive
 {
-    public override void Activate(Collider collider)
+    public override void Activate()
     {
-        Debug.Log($"EXPLODE MINE!!! Triggered by: {collider.name}");
-
         Explode();
     }
 }

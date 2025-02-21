@@ -23,12 +23,10 @@ public class SMine : Explosive
     bool isLaunching = false;
     float timeSinceLaunch = 0f;
 
-    public override void Activate(Collider collider)
+    public override void Activate()
     {
         if (!isLaunching)
         {
-            Debug.Log($"LAUNCH MINE!!! Triggered by: {collider.name}");
-
             Rigidbody.useGravity = true;
             Rigidbody.AddForce(transform.up * LaunchForce, ForceMode.VelocityChange);
 

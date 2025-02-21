@@ -54,7 +54,7 @@ MonoBehaviour:
   DebugAreaOfEffectColor: {r: 0.5, g: 0, b: 0, a: 0.5}
   LaunchForce: 6
   LaunchTimeSeconds: 0.75
-  LaunchSound: {fileID: 8300000, guid: 419336aa8912ae0468e104596863a0a1, type: 3}
+  LaunchSound: {fileID: 8300000, guid: 27baf5fbb3e818843846d217a76b58b0, type: 3}
   Rigidbody: {fileID: 2681095919600754972}
   AudioSource: {fileID: 6448448304034385901}
 --- !u!82 &6448448304034385901
@@ -193,6 +193,9 @@ GameObject:
   - component: {fileID: 4917741796417824525}
   - component: {fileID: 3557497662660146244}
   - component: {fileID: 2739020729629168661}
+  - component: {fileID: 3052276808528793890}
+  - component: {fileID: 4572147501057442895}
+  - component: {fileID: 8292329959207662868}
   m_Layer: 14
   m_Name: SM_Wep_American_Grenade_Clip
   m_TagString: Untagged
@@ -268,6 +271,58 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3052276808528793890
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886856554275316570}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300004, guid: 891efd9b6aff8074b99040e93fac31d8, type: 3}
+--- !u!114 &4572147501057442895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886856554275316570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09095d8c4bd6f1b4b9126a5d6d4f5f78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TriggeringToolType: 0
+  m_Explosive: {fileID: 2347409966680568572}
+--- !u!114 &8292329959207662868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886856554275316570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f754358b2b79a3f4a96f0c87e438c743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AudioClipsForEffectType:
+  - m_ToolEffectType: 0
+    m_AudioClip: {fileID: 8300000, guid: c5955b1ca51d47245ae5e5e10395d910, type: 3}
+  m_AudioSource: {fileID: 6448448304034385901}
 --- !u!1 &1424557154064367316
 GameObject:
   m_ObjectHideFlags: 0
