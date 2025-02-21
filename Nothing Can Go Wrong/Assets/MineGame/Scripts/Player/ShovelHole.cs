@@ -17,7 +17,7 @@ namespace Unity.FPS.Game
                 = Physics.OverlapBox
                 (
                     m_collider.transform.position, 
-                    m_collider.bounds.extents, 
+                    m_collider.bounds.extents / 2, 
                     m_collider.transform.rotation, 
                     LayerMask.GetMask("Shovel Hole", "Mine")
                 );
@@ -31,13 +31,26 @@ namespace Unity.FPS.Game
                 }
                 else
                 {
-                    // This assumes that the collider is exactly 1 below the root of the object.
-                    // Which is not really a safe assumption to make!
-                    Transform root = collider.transform.parent;
+                    // I had issues getting the root of the object without going too far up the heirarchy.
+                    // So tag the root of things that should move with "Diggable"
+                    Transform diggable = collider.transform;
+                    while(diggable != null)
+                    {
+                        if (diggable.tag == "Diggable")
+                        {
+                            break;
+                        }
 
-                    // If it is lower than the new hole, move it up to our Y.
-                    float newY = Mathf.Max(root.transform.position.y, transform.position.y);
-                    root.position = new Vector3(root.position.x, newY, root.position.z);
+                        diggable = diggable.parent;
+                    }
+
+                    if (diggable != null)
+                    {
+                        Transform root = diggable.gameObject.transform;
+                        // If it is lower than the new hole, move it up to the hole's Y.
+                        float newY = Mathf.Max(root.position.y, transform.position.y);
+                        root.position = new Vector3(root.position.x, newY, root.position.z);
+                    }
                 }
             }
         }

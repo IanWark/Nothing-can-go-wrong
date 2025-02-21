@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnChance: 0.33
-  ObjectToSpawn: {fileID: 0}
+  ObjectToSpawn: {fileID: 1006448057596026368}
 --- !u!1001 &1004697614267571500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -104,6 +104,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd8ba0300338612408af2f7c021d488d, type: 3}
+--- !u!1 &1006448057596026368 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1961551174910764, guid: bd8ba0300338612408af2f7c021d488d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1004697614267571500}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1008518109966051444 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4396709082494296, guid: bd8ba0300338612408af2f7c021d488d,

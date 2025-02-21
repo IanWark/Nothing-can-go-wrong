@@ -16,5 +16,12 @@ public class RandomSpawner : MonoBehaviour
         {
             Destroy(ObjectToSpawn);
         }
+        else
+        {
+            // Reparent, since we are about to destroy ourselves.
+            ObjectToSpawn.transform.parent = transform.parent;
+        }
+
+        Destroy(gameObject);
     }
 }
