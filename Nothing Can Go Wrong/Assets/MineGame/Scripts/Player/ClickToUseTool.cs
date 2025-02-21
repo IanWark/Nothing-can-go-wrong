@@ -2,8 +2,6 @@
 using Unity.FPS.Gameplay;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
-using static Unity.FPS.Gameplay.PlayerToolsManager;
 
 namespace Unity.FPS.Game
 {
@@ -13,9 +11,12 @@ namespace Unity.FPS.Game
         Automatic,
     }
 
+    [Flags]
     public enum ToolEffectType
     {
-        Knife,
+        // Flags need to be powers of 2
+        Knife = 2,
+        Shovel = 4,
     }
 
     [RequireComponent(typeof(AudioSource))]
@@ -68,11 +69,6 @@ namespace Unity.FPS.Game
         private AudioSource m_ContinuousUseAudioSource = null;
         private bool m_WantsToShoot = false;
 
-        [SerializeField]
-        private UnityAction OnShoot;
-        [SerializeField]
-        private event Action OnShootProcessed;
-
         private int m_CarriedAmmo;
         private float m_LastTimeShot = Mathf.NegativeInfinity;
 
@@ -108,6 +104,11 @@ namespace Unity.FPS.Game
 
                     return;
             }
+        }
+
+        protected virtual void OnHitSomething(RaycastHit hit)
+        {
+            // Don't do anything, this is so ShovelTool can override it.
         }
 
         private void Awake()
@@ -167,6 +168,8 @@ namespace Unity.FPS.Game
                     interactable.Interact(m_ToolEffectType);
                 }
 
+                OnHitSomething(hit);
+
                 Debug.DrawRay(origin, direction * hit.distance, Color.yellow, DelayBetweenShots);
                 Debug.Log($"Did Hit: {hit.collider.gameObject}");
             }
@@ -175,9 +178,6 @@ namespace Unity.FPS.Game
                 Debug.DrawRay(origin, direction * Reach, Color.white, DelayBetweenShots);
                 Debug.Log("Did not Hit");
             }
-
-            OnShoot?.Invoke();
-            OnShootProcessed?.Invoke();
         }
 
         private void Update()

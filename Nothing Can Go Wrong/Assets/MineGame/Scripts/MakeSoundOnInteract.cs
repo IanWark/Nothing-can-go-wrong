@@ -24,7 +24,7 @@ public class MakeSoundOnInteract : MonoBehaviour, IInteractable
     {
         foreach (AudioClipForEffectType audioClipForEffectType in m_AudioClipsForEffectType)
         {
-            if (audioClipForEffectType.m_ToolEffectType == toolEffectType)
+            if (audioClipForEffectType.m_ToolEffectType.HasFlag(toolEffectType))
             {
                 m_AudioSource.PlayOneShot(audioClipForEffectType.m_AudioClip);
                 return;

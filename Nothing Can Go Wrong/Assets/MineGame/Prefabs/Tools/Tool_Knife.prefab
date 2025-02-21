@@ -94,7 +94,7 @@ MonoBehaviour:
   ToolAnimator: {fileID: 8474700551355790503}
   ChangeToolSfx: {fileID: 8300000, guid: 7b83d61917ac1224f942a0609b1221f2, type: 3}
   m_ToolAudioSource: {fileID: 8090847488450120274}
-  m_ToolEffectType: 0
+  m_ToolEffectType: 2
   LayersToIgnore:
     serializedVersion: 2
     m_Bits: 100352

@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09095d8c4bd6f1b4b9126a5d6d4f5f78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TriggeringToolType: 0
+  m_TriggeringToolType: -1
   m_Explosive: {fileID: 2347409966680568572}
 --- !u!114 &8292329959207662868
 MonoBehaviour:
@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AudioClipsForEffectType:
-  - m_ToolEffectType: 0
+  - m_ToolEffectType: -1
     m_AudioClip: {fileID: 8300000, guid: c5955b1ca51d47245ae5e5e10395d910, type: 3}
   m_AudioSource: {fileID: 6448448304034385901}
 --- !u!1 &1424557154064367316
@@ -601,6 +601,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AudioClipsForEffectType:
-  - m_ToolEffectType: 0
+  - m_ToolEffectType: -1
     m_AudioClip: {fileID: 8300000, guid: c5955b1ca51d47245ae5e5e10395d910, type: 3}
   m_AudioSource: {fileID: 6448448304034385901}

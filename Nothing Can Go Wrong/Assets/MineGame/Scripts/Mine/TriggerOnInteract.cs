@@ -11,7 +11,7 @@ public class TriggerOnInteract : MonoBehaviour, IInteractable
 
     public void Interact(ToolEffectType toolEffectType)
     {
-        if (toolEffectType.HasFlag(m_TriggeringToolType))
+        if (m_TriggeringToolType.HasFlag(toolEffectType))
         {
             m_Explosive.Activate();
         }
