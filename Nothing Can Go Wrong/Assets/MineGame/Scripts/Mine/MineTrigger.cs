@@ -8,6 +8,7 @@ public class MineTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
+        Debug.Log($"Trigger activated by: {collider.name}");
         m_explosive.Activate();
     }
 }
