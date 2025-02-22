@@ -90,7 +90,11 @@ MonoBehaviour:
     CrosshairSize: 10
     CrosshairColor: {r: 1, g: 1, b: 1, a: 1}
   ToolRoot: {fileID: 1505447205160222267}
+  AimZoomRatio: 0.75
+  AimOffset: {x: 0, y: 0, z: 0}
   NeedsAmmo: 0
+  StartingAmmo: 4
+  MaxAmmo: 8
   ToolAnimator: {fileID: 8474700551355790503}
   ChangeToolSfx: {fileID: 8300000, guid: 7b83d61917ac1224f942a0609b1221f2, type: 3}
   m_ToolAudioSource: {fileID: 8090847488450120274}
@@ -101,8 +105,6 @@ MonoBehaviour:
   ShootType: 0
   Reach: 2
   DelayBetweenShots: 0.5
-  StartingAmmo: 4
-  MaxAmmo: 8
   UseSfx: {fileID: 0}
   UseContinuousUseSound: 0
   ContinuousUseStartSfx: {fileID: 0}
@@ -243,6 +245,10 @@ PrefabInstance:
     - target: {fileID: 1996548201038572, guid: 77683cbf66894cd49ae5e5fcfca2b40f, type: 3}
       propertyPath: m_Name
       value: SM_Char_Attach_American_Shovel_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1996548201038572, guid: 77683cbf66894cd49ae5e5fcfca2b40f, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4370176175182566, guid: 77683cbf66894cd49ae5e5fcfca2b40f, type: 3}
       propertyPath: m_LocalPosition.x

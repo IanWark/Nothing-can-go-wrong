@@ -17,6 +17,7 @@ namespace Unity.FPS.Game
         // Flags need to be powers of 2
         Knife = 2,
         Shovel = 4,
+        Pin = 8,
     }
 
     [RequireComponent(typeof(AudioSource))]
@@ -44,14 +45,6 @@ namespace Unity.FPS.Game
         [SerializeField]
         private float DelayBetweenShots = 0.5f;
 
-        [Header("Ammo Parameters")]
-        [Tooltip("Aamount of ammo you start with")]
-        [SerializeField]
-        private int StartingAmmo = 4;
-        [Tooltip("Maximum amount of ammo total")]
-        [SerializeField]
-        private int MaxAmmo = 8;
-
         [Header("Audio & Visual")]
         [Tooltip("sound played when used")]
         [SerializeField]
@@ -69,13 +62,9 @@ namespace Unity.FPS.Game
         private AudioSource m_ContinuousUseAudioSource = null;
         private bool m_WantsToShoot = false;
 
-        private int m_CarriedAmmo;
         private float m_LastTimeShot = Mathf.NegativeInfinity;
 
         private const string k_AnimUseParameter = "Use";
-
-        public override int GetCarriedAmmo() => m_CarriedAmmo;
-        public override void AddCarriableAmmo(int count) => m_CarriedAmmo = Mathf.Max(m_CarriedAmmo + count, MaxAmmo);
 
         /// <summary>
         /// Handle inputs specific to the tool.
@@ -111,9 +100,9 @@ namespace Unity.FPS.Game
             // Don't do anything, this is so ShovelTool can override it.
         }
 
-        private void Awake()
+        protected override void Awake()
         {
-            m_CarriedAmmo = NeedsAmmo ? StartingAmmo : 0;
+            base.Awake();
 
             if (UseContinuousUseSound)
             {

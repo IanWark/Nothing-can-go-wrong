@@ -47,16 +47,22 @@ namespace Unity.FPS.Game
         [Tooltip("Ratio of the default FOV that this weapon applies while aiming")]
         [Range(0f, 1f)]
         [SerializeField]
-        public float AimZoomRatio { get; private set; } = 1f;
+        public float AimZoomRatio = 1f;
 
         [Tooltip("Translation to apply to weapon arm when aiming with this weapon")]
         [SerializeField]
-        public Vector3 AimOffset { get; private set; }
+        public Vector3 AimOffset;
 
         [Header("Ammo Parameters")]
         [Tooltip("Requires ammo")]
         [SerializeField]
         public bool NeedsAmmo = false;
+        [Tooltip("Amount of ammo you start with")]
+        [SerializeField]
+        protected int StartingAmmo = 4;
+        [Tooltip("Maximum amount of ammo total")]
+        [SerializeField]
+        protected int MaxAmmo = 8;
 
         [Header("Audio & Visual")]
         [Tooltip("Optional tool animator for OnUse and OnReload animations")]
@@ -76,14 +82,20 @@ namespace Unity.FPS.Game
 
         public Camera ToolCamera { get; set; }
 
-        public abstract int GetCarriedAmmo();
+        protected int m_CarriedAmmo;
 
-        public abstract void AddCarriableAmmo(int count);
+        public int GetCarriedAmmo() => m_CarriedAmmo;
+        public void AddCarriableAmmo(int count) => m_CarriedAmmo = Mathf.Max(m_CarriedAmmo + count, MaxAmmo);
 
         /// <summary>
         /// Handle inputs specific to the tool.
         /// </summary>
         public abstract void HandleInputs(PlayerInputHandler inputHandler);
+
+        protected virtual void Awake()
+        {
+            m_CarriedAmmo = NeedsAmmo ? StartingAmmo : 0;
+        }
 
         /// <summary>
         /// What happens on switching to or from this tool.
