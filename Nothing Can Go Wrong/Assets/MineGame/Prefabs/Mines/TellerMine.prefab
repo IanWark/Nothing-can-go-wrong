@@ -50,14 +50,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AreaOfEffectRadius: 2
-  BaseDamage: 100
+  BaseDamage: 500
   ExplosionSound: {fileID: 8300000, guid: 8524588a69a4f3e40bb597b6221138f1, type: 3}
   DebugAreaOfEffectColor: {r: 0.5, g: 0, b: 0, a: 0.5}
   m_chancePerTripwire: 0.15
   m_tripwires:
   - {fileID: 3312910023548453782}
   m_unscrewSound: {fileID: 8300000, guid: 070779cdcfbe3ff4688691fb33bc3e4e, type: 3}
-  m_audioSource: {fileID: 6448448304034385901}
 --- !u!82 &6448448304034385901
 AudioSource:
   m_ObjectHideFlags: 0
@@ -116,7 +115,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
