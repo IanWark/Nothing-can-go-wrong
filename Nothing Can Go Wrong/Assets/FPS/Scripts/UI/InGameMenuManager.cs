@@ -17,12 +17,6 @@ namespace Unity.FPS.UI
         [Tooltip("Slider component for look sensitivity")]
         public Slider LookSensitivitySlider;
 
-        [Tooltip("Toggle component for shadows")]
-        public Toggle ShadowsToggle;
-
-        [Tooltip("Toggle component for invincibility")]
-        public Toggle InvincibilityToggle;
-
         [Tooltip("Toggle component for framerate display")]
         public Toggle FramerateToggle;
 
@@ -30,7 +24,6 @@ namespace Unity.FPS.UI
         public GameObject ControlImage;
 
         PlayerInputHandler m_PlayerInputsHandler;
-        Health m_PlayerHealth;
         FramerateCounter m_FramerateCounter;
 
         void Start()
@@ -39,9 +32,6 @@ namespace Unity.FPS.UI
             DebugUtility.HandleErrorIfNullFindObject<PlayerInputHandler, InGameMenuManager>(m_PlayerInputsHandler,
                 this);
 
-            m_PlayerHealth = m_PlayerInputsHandler.GetComponent<Health>();
-            DebugUtility.HandleErrorIfNullGetComponent<Health, InGameMenuManager>(m_PlayerHealth, this, gameObject);
-
             m_FramerateCounter = FindFirstObjectByType<FramerateCounter>();
             DebugUtility.HandleErrorIfNullFindObject<FramerateCounter, InGameMenuManager>(m_FramerateCounter, this);
 
@@ -49,12 +39,6 @@ namespace Unity.FPS.UI
 
             LookSensitivitySlider.value = m_PlayerInputsHandler.LookSensitivity;
             LookSensitivitySlider.onValueChanged.AddListener(OnMouseSensitivityChanged);
-
-            ShadowsToggle.isOn = QualitySettings.shadows != ShadowQuality.Disable;
-            ShadowsToggle.onValueChanged.AddListener(OnShadowsChanged);
-
-            InvincibilityToggle.isOn = m_PlayerHealth.Invincible;
-            InvincibilityToggle.onValueChanged.AddListener(OnInvincibilityChanged);
 
             FramerateToggle.isOn = m_FramerateCounter.UIText.gameObject.activeSelf;
             FramerateToggle.onValueChanged.AddListener(OnFramerateCounterChanged);
@@ -129,16 +113,6 @@ namespace Unity.FPS.UI
         void OnMouseSensitivityChanged(float newValue)
         {
             m_PlayerInputsHandler.LookSensitivity = newValue;
-        }
-
-        void OnShadowsChanged(bool newValue)
-        {
-            QualitySettings.shadows = newValue ? ShadowQuality.All : ShadowQuality.Disable;
-        }
-
-        void OnInvincibilityChanged(bool newValue)
-        {
-            m_PlayerHealth.Invincible = newValue;
         }
 
         void OnFramerateCounterChanged(bool newValue)
