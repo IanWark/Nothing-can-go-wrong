@@ -56,6 +56,8 @@ MonoBehaviour:
   m_chancePerTripwire: 0.15
   m_tripwires:
   - {fileID: 3312910023548453782}
+  m_unscrewSound: {fileID: 8300000, guid: 070779cdcfbe3ff4688691fb33bc3e4e, type: 3}
+  m_audioSource: {fileID: 6448448304034385901}
 --- !u!82 &6448448304034385901
 AudioSource:
   m_ObjectHideFlags: 0

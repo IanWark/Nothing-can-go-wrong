@@ -10,6 +10,9 @@ public class TellerMine : Explosive, IInteractable
     [SerializeField]
     private List<GameObject> m_tripwires;
 
+    [SerializeField]
+    private AudioClip m_unscrewSound;
+
     private void Awake()
     {
         List<GameObject> tripwiresToDestroy = new List<GameObject>();
@@ -48,6 +51,9 @@ public class TellerMine : Explosive, IInteractable
             {
                 // Disarmed
                 // TODO
+
+                // We are about to destroy the object, so use PlayClipAtPoint instead of our audio source.
+                AudioSource.PlayClipAtPoint(m_unscrewSound, transform.position);
                 Destroy(gameObject);
             }
         }
