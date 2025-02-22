@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2395000}
   - component: {fileID: 64712999310202804}
   - component: {fileID: 7778211271920098672}
+  - component: {fileID: 8378780278047593256}
   - component: {fileID: 1105873451159495706}
   m_Layer: 14
   m_Name: SM_Prop_Shell_02
@@ -127,6 +128,19 @@ MonoBehaviour:
   - m_ToolEffectType: -1
     m_AudioClip: {fileID: 8300000, guid: c5955b1ca51d47245ae5e5e10395d910, type: 3}
   m_AudioSource: {fileID: 1105873451159495706}
+--- !u!114 &8378780278047593256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae85cd04336413469e0eeb4a2549417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolEffectType: 16
 --- !u!82 &1105873451159495706
 AudioSource:
   m_ObjectHideFlags: 0
