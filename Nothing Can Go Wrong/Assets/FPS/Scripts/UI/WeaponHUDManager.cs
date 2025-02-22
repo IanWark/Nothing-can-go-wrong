@@ -16,7 +16,7 @@ namespace Unity.FPS.UI
         PlayerToolsManager m_PlayerToolsManager;
         List<AmmoCounter> m_AmmoCounters = new List<AmmoCounter>();
 
-        void Start()
+        void Awake()
         {
             m_PlayerToolsManager = FindFirstObjectByType<PlayerToolsManager>();
             DebugUtility.HandleErrorIfNullFindObject<PlayerToolsManager, WeaponHUDManager>(m_PlayerToolsManager,
