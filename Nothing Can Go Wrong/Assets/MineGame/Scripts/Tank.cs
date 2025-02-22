@@ -20,17 +20,15 @@ public class Tank : MonoBehaviour
     [SerializeField]
     private GameObject m_destroyedTankModel;
 
+    public void Go()
+    {
+        m_navMeshAgent.destination = m_pathPoints[0].position;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
         m_health.OnDie += Die;
-
-        Go();
-    }
-
-    private void Go()
-    {
-        m_navMeshAgent.destination = m_pathPoints[0].position;
     }
 
     private void Die()
