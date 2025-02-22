@@ -120,7 +120,7 @@ namespace Unity.FPS.Game
 
                 case EndGameState.TankDestroyed:
                     m_SceneToLoad = TankDestroyedSceneName;
-                    m_TimeLoadEndGameScene = Time.time + EndSceneLoadDelay;
+                    m_TimeLoadEndGameScene = Time.time + EndSceneLoadDelay + DelayBeforeFadeToBlack;
                     break;
             }
         }
