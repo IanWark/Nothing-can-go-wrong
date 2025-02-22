@@ -64,6 +64,8 @@ namespace Unity.FPS.Game
 
         private float m_LastTimeShot = Mathf.NegativeInfinity;
 
+        private float m_LastTimeInteractedWithSomething = Mathf.NegativeInfinity;
+
         private const string k_AnimUseParameter = "Use";
 
         /// <summary>
@@ -93,6 +95,11 @@ namespace Unity.FPS.Game
 
                     return;
             }
+        }
+
+        public override bool ShouldUseInteractCrosshair()
+        {
+            return m_LastTimeInteractedWithSomething + CrosshairInteractTime > Time.time;
         }
 
         protected virtual void OnHitSomething(RaycastHit hit)
@@ -155,6 +162,7 @@ namespace Unity.FPS.Game
                 {
                     // Let the object know it was hit by a tool of this type.
                     interactable.Interact(m_ToolEffectType);
+                    m_LastTimeInteractedWithSomething = Time.time;
                 }
 
                 OnHitSomething(hit);

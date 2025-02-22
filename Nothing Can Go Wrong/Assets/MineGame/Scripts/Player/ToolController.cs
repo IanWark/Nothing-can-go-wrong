@@ -38,6 +38,14 @@ namespace Unity.FPS.Game
         [SerializeField]
         public CrosshairData CrosshairDataTargetInSight;
 
+        [Tooltip("Data for the crosshair when hitting something")]
+        [SerializeField]
+        public CrosshairData CrosshairDataOnInteract;
+
+        [Tooltip("How long the crosshair changes when hitting something")]
+        [SerializeField]
+        protected float CrosshairInteractTime;
+
         [Header("Internal References")]
         [Tooltip("The root object for the weapon, this is what will be deactivated when the weapon isn't active")]
         [SerializeField]
@@ -83,6 +91,8 @@ namespace Unity.FPS.Game
         public Camera ToolCamera { get; set; }
 
         protected int m_CarriedAmmo;
+
+        public abstract bool ShouldUseInteractCrosshair();
 
         public int GetCarriedAmmo() => m_CarriedAmmo;
         public void AddCarriableAmmo(int count) => m_CarriedAmmo = Mathf.Max(m_CarriedAmmo + count, MaxAmmo);

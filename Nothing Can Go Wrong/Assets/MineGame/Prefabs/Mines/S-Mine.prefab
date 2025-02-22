@@ -403,6 +403,7 @@ GameObject:
   - component: {fileID: 4697347916485799676}
   - component: {fileID: 6705001090694957148}
   - component: {fileID: 5864596130068391283}
+  - component: {fileID: 3162934289571668898}
   m_Layer: 14
   m_Name: SM_Wep_American_Grenade_Pin
   m_TagString: Untagged
@@ -515,6 +516,22 @@ MonoBehaviour:
   m_acceptedEffectTypes: 8
   m_mineTrigger: {fileID: 2354192045295152985}
   m_minePin: {fileID: 1422389422190213171}
+--- !u!114 &3162934289571668898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3659697075686181072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f754358b2b79a3f4a96f0c87e438c743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AudioClipsForEffectType:
+  - m_ToolEffectType: -1
+    m_AudioClip: {fileID: 8300000, guid: c5955b1ca51d47245ae5e5e10395d910, type: 3}
+  m_AudioSource: {fileID: 6448448304034385901}
 --- !u!1 &3971863094986685796
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,6 +731,11 @@ PrefabInstance:
     - target: {fileID: 671075789732384319, guid: 32ef11b3d379e4b48a1fe64fcf67cf90,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 695237669790264365, guid: 32ef11b3d379e4b48a1fe64fcf67cf90,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

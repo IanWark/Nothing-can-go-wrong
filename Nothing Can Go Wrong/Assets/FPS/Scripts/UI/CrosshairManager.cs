@@ -14,8 +14,7 @@ namespace Unity.FPS.UI
         PlayerToolsManager m_WeaponsManager;
         bool m_WasPointingAtEnemy;
         RectTransform m_CrosshairRectTransform;
-        CrosshairData m_CrosshairDataDefault;
-        CrosshairData m_CrosshairDataTarget;
+        ToolController m_CurrentTool;
         CrosshairData m_CurrentCrosshair;
 
         void Start()
@@ -30,27 +29,30 @@ namespace Unity.FPS.UI
 
         void Update()
         {
-            UpdateCrosshairPointingAtEnemy(false);
+            UpdateCrosshairIcon();
             m_WasPointingAtEnemy = m_WeaponsManager.IsPointingAtEnemy;
         }
 
-        void UpdateCrosshairPointingAtEnemy(bool force)
+        void UpdateCrosshairIcon()
         {
-            if (m_CrosshairDataDefault.CrosshairSprite == null)
+            if (m_CurrentTool == null || m_CurrentTool.CrosshairDataDefault.CrosshairSprite == null)
                 return;
 
-            if ((force || !m_WasPointingAtEnemy) && m_WeaponsManager.IsPointingAtEnemy)
+            if (m_CurrentTool.ShouldUseInteractCrosshair())
             {
-                m_CurrentCrosshair = m_CrosshairDataTarget;
-                CrosshairImage.sprite = m_CurrentCrosshair.CrosshairSprite;
-                m_CrosshairRectTransform.sizeDelta = m_CurrentCrosshair.CrosshairSize * Vector2.one;
+                m_CurrentCrosshair = m_CurrentTool.CrosshairDataOnInteract;
             }
-            else if ((force || m_WasPointingAtEnemy) && !m_WeaponsManager.IsPointingAtEnemy)
+            else if (m_WeaponsManager.IsPointingAtEnemy)
             {
-                m_CurrentCrosshair = m_CrosshairDataDefault;
-                CrosshairImage.sprite = m_CurrentCrosshair.CrosshairSprite;
-                m_CrosshairRectTransform.sizeDelta = m_CurrentCrosshair.CrosshairSize * Vector2.one;
+                m_CurrentCrosshair = m_CurrentTool.CrosshairDataTargetInSight;
             }
+            else if (!m_WeaponsManager.IsPointingAtEnemy)
+            {
+                m_CurrentCrosshair = m_CurrentTool.CrosshairDataDefault;
+            }
+
+            CrosshairImage.sprite = m_CurrentCrosshair.CrosshairSprite;
+            m_CrosshairRectTransform.sizeDelta = m_CurrentCrosshair.CrosshairSize * Vector2.one;
 
             CrosshairImage.color = Color.Lerp(CrosshairImage.color, m_CurrentCrosshair.CrosshairColor,
                 Time.deltaTime * CrosshairUpdateshrpness);
@@ -62,11 +64,12 @@ namespace Unity.FPS.UI
 
         void OnWeaponChanged(ToolController newWeapon)
         {
-            if (newWeapon)
+            m_CurrentTool = newWeapon;
+
+            if (m_CurrentTool)
             {
                 CrosshairImage.enabled = true;
-                m_CrosshairDataDefault = newWeapon.CrosshairDataDefault;
-                m_CrosshairDataTarget = newWeapon.CrosshairDataTargetInSight;
+                
                 m_CrosshairRectTransform = CrosshairImage.GetComponent<RectTransform>();
                 DebugUtility.HandleErrorIfNullGetComponent<RectTransform, CrosshairManager>(m_CrosshairRectTransform,
                     this, CrosshairImage.gameObject);
@@ -83,7 +86,7 @@ namespace Unity.FPS.UI
                 }
             }
 
-            UpdateCrosshairPointingAtEnemy(true);
+            UpdateCrosshairIcon();
         }
     }
 }
