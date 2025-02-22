@@ -249,7 +249,8 @@ MonoBehaviour:
   WinGameMessage: All objectives completed
   DelayBeforeWinMessage: 2
   VictorySound: {fileID: 8300000, guid: a533219934975884e81c1add37af9930, type: 3}
-  LoseSceneName: LoseScene
+  DeathSceneName: DeathScene
+  TankDestroyedSceneName: LoseTankScene
 --- !u!114 &3244674540524639750
 MonoBehaviour:
   m_ObjectHideFlags: 0
