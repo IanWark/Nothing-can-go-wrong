@@ -419,7 +419,7 @@ MonoBehaviour:
   MaxSpeedCrouchedRatio: 0.25
   MaxSpeedInAir: 3
   AccelerationSpeedInAir: 25
-  SprintSpeedModifier: 3
+  SprintSpeedModifier: 2.5
   KillHeight: -50
   RotationSpeed: 200
   AimingRotationMultiplier: 0.4
