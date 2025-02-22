@@ -46,6 +46,6 @@ public class Tank : MonoBehaviour
         m_navMeshAgent.isStopped = true;
 
         // End the game
-        EventManager.Broadcast(Events.PlayerDeathEvent);
+        EventManager.Broadcast(Events.TankDestroyedEvent);
     }
 }
