@@ -18,6 +18,7 @@ namespace Unity.FPS.Game
         Knife = 2,
         Shovel = 4,
         Pin = 8,
+        Hands = 16,
     }
 
     [RequireComponent(typeof(AudioSource))]
