@@ -1417,7 +1417,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7730855410354769530}
-  - component: {fileID: 5917255261459168744}
   - component: {fileID: 8202736506323863205}
   - component: {fileID: 5499754808462435493}
   - component: {fileID: 817587990}
@@ -1451,21 +1450,6 @@ Transform:
   - {fileID: 4863125819350701414}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5917255261459168744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5413294659218134590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c971cff0496fb3d48a9ce082496d6ef8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  JetpackFillImage: {fileID: 4863125819058600352}
-  MainCanvasGroup: {fileID: 4863125819987826151}
-  FillBarColorChange: {fileID: 8385510227382900224}
 --- !u!114 &8202736506323863205
 MonoBehaviour:
   m_ObjectHideFlags: 0
