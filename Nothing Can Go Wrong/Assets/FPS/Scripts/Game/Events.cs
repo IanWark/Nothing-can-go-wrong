@@ -11,6 +11,7 @@ namespace Unity.FPS.Game
         public static AllObjectivesCompletedEvent AllObjectivesCompletedEvent = new AllObjectivesCompletedEvent();
         public static GameOverEvent GameOverEvent = new GameOverEvent();
         public static PlayerDeathEvent PlayerDeathEvent = new PlayerDeathEvent();
+        public static TankDestroyedEvent TankDestroyedEvent = new TankDestroyedEvent();
         public static EnemyKillEvent EnemyKillEvent = new EnemyKillEvent();
         public static PickupEvent PickupEvent = new PickupEvent();
         public static AmmoPickupEvent AmmoPickupEvent = new AmmoPickupEvent();
@@ -35,6 +36,8 @@ namespace Unity.FPS.Game
     }
 
     public class PlayerDeathEvent : GameEvent { }
+
+    public class TankDestroyedEvent : GameEvent { }
 
     public class EnemyKillEvent : GameEvent
     {
