@@ -15,10 +15,10 @@ EditorBuildSettings:
     path: Assets/MineGame/Scenes/LoseScene.unity
     guid: 72e5c65a45893714484002914e3fd521
   - enabled: 1
-    path: Assets/FPS/Scenes/MainScene.unity
-    guid: d794a2ef8ba31d847ad3c19d03e2ddb9
-  - enabled: 1
     path: Assets/MineGame/Scenes/NothingCanGoWrong.unity
     guid: 1f29034a112571a40aab924ae9a98637
+  - enabled: 1
+    path: Assets/MineGame/Scenes/InstructionsMenu.unity
+    guid: 889905a390c23c741b9aef09aa646987
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
