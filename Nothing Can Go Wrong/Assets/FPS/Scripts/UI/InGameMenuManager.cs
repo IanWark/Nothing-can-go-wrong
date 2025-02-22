@@ -23,6 +23,9 @@ namespace Unity.FPS.UI
         [Tooltip("GameObject for the controls")]
         public GameObject ControlImage;
 
+        [Tooltip("GameObject for the instructions")]
+        public GameObject InstructionsScreen;
+
         PlayerInputHandler m_PlayerInputsHandler;
         FramerateCounter m_FramerateCounter;
 
@@ -123,6 +126,11 @@ namespace Unity.FPS.UI
         public void OnShowControlButtonClicked(bool show)
         {
             ControlImage.SetActive(show);
+        }
+
+        public void OnShowInstructionsCanvas(bool show)
+        {
+            InstructionsScreen.gameObject.SetActive(show);
         }
     }
 }

@@ -64,7 +64,6 @@ MonoBehaviour:
   CrosshairInteractTime: 0.5
   ToolRoot: {fileID: 3152698501067971947}
   AimZoomRatio: 0.75
-  AimOffset: {x: 0, y: 0, z: 0}
   NeedsAmmo: 0
   StartingAmmo: 4
   MaxAmmo: 8
