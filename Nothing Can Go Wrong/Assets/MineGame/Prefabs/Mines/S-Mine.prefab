@@ -51,6 +51,9 @@ MonoBehaviour:
   AreaOfEffectRadius: 5
   BaseDamage: 51
   ExplosionSound: {fileID: 8300000, guid: fc96116dc3c141440aabb5605744fea2, type: 3}
+  ExplosionFX: {fileID: 1804206099813350, guid: baff2d0a696afa047a64ee39e5067de4,
+    type: 3}
+  ExplosionScale: {x: 0.25, y: 0.25, z: 0.25}
   DebugAreaOfEffectColor: {r: 0.5, g: 0, b: 0, a: 0.5}
   LaunchForce: 6
   LaunchTimeSeconds: 0.75

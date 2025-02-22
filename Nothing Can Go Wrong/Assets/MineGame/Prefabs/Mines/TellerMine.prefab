@@ -51,6 +51,8 @@ MonoBehaviour:
   AreaOfEffectRadius: 2
   BaseDamage: 500
   ExplosionSound: {fileID: 8300000, guid: 8524588a69a4f3e40bb597b6221138f1, type: 3}
+  ExplosionFX: {fileID: 1336195145445708, guid: c6a87ea714a9fcd4f823992a060d7f7b,
+    type: 3}
   DebugAreaOfEffectColor: {r: 0.5, g: 0, b: 0, a: 0.5}
   m_chancePerTripwire: 0.15
   m_tripwires:

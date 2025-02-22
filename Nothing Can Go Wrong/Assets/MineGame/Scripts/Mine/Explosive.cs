@@ -14,9 +14,12 @@ public abstract class Explosive : MonoBehaviour
     public AnimationCurve DamageRatioOverDistance;
     */
 
-    [Header("Audio")]
+    [Header("Audio and visual")]
     [SerializeField]
     private AudioClip ExplosionSound;
+
+    [SerializeField]
+    private GameObject ExplosionFX;
 
     [Header("Debug")]
     [Tooltip("Color of the area of effect radius")]
@@ -32,6 +35,8 @@ public abstract class Explosive : MonoBehaviour
     {
         // We are about to destroy the object, so use PlayClipAtPoint instead of our audio source.
         AudioSource.PlayClipAtPoint(ExplosionSound, transform.position);
+        // Create an explosion at ourselves
+        Instantiate(ExplosionFX, transform.position, transform.rotation);
 
         InflictDamageInArea(BaseDamage, transform.position, layerMask, k_TriggerInteraction);
         Destroy(gameObject);
