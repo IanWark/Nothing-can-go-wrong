@@ -57,10 +57,6 @@ namespace Unity.FPS.Game
         [SerializeField]
         public float AimZoomRatio = 1f;
 
-        [Tooltip("Translation to apply to weapon arm when aiming with this weapon")]
-        [SerializeField]
-        public Vector3 AimOffset;
-
         [Header("Ammo Parameters")]
         [Tooltip("Requires ammo")]
         [SerializeField]

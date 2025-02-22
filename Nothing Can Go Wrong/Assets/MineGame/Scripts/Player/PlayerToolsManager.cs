@@ -250,18 +250,13 @@ namespace Unity.FPS.Gameplay
             if (m_WeaponSwitchState == ToolSwitchState.Up)
             {
                 ToolController activeTool = GetActiveTool();
-                if (IsAiming && activeTool)
+                if (IsAiming)
                 {
-                    m_WeaponMainLocalPosition = Vector3.Lerp(m_WeaponMainLocalPosition,
-                        AimingWeaponPosition.localPosition + activeTool.AimOffset,
-                        AimingAnimationSpeed * Time.deltaTime);
                     SetFov(Mathf.Lerp(m_PlayerCharacterController.PlayerCamera.fieldOfView,
                         activeTool.AimZoomRatio * DefaultFov, AimingAnimationSpeed * Time.deltaTime));
                 }
                 else
                 {
-                    m_WeaponMainLocalPosition = Vector3.Lerp(m_WeaponMainLocalPosition,
-                        DefaultWeaponPosition.localPosition, AimingAnimationSpeed * Time.deltaTime);
                     SetFov(Mathf.Lerp(m_PlayerCharacterController.PlayerCamera.fieldOfView, DefaultFov,
                         AimingAnimationSpeed * Time.deltaTime));
                 }
