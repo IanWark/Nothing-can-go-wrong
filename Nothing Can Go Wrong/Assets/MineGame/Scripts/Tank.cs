@@ -35,9 +35,11 @@ public class Tank : MonoBehaviour
 
     private void Die()
     {
-        // TODO end the game
         Destroy(m_aliveTankModel);
         m_destroyedTankModel.SetActive(true);
         m_navMeshAgent.isStopped = true;
+
+        // End the game
+        EventManager.Broadcast(Events.PlayerDeathEvent);
     }
 }
