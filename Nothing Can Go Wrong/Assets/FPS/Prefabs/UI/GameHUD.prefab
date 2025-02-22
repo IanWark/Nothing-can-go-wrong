@@ -1422,7 +1422,6 @@ GameObject:
   - component: {fileID: 817587990}
   - component: {fileID: 8914494409660412361}
   - component: {fileID: 4408840208916598594}
-  - component: {fileID: 804804969663160542}
   - component: {fileID: 4692738559174620312}
   - component: {fileID: 1845787234550258351}
   - component: {fileID: 1610334969856411743}
@@ -1530,21 +1529,6 @@ MonoBehaviour:
   StanceImage: {fileID: 5457988732091929373}
   StandingSprite: {fileID: 21300000, guid: 52709b32aa114154aa3f42f22d4d225c, type: 3}
   CrouchingSprite: {fileID: 21300000, guid: d9b0340e45d66d64199b8219686bb5c5, type: 3}
---- !u!114 &804804969663160542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5413294659218134590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cc74ffbc49331241b49395553802a02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NotificationPanel: {fileID: 4785774642944489473}
-  NotificationPrefab: {fileID: 8322339850511969721, guid: 791e30b832d8b814c82d519317a16e6d,
-    type: 3}
 --- !u!114 &4692738559174620312
 MonoBehaviour:
   m_ObjectHideFlags: 0
