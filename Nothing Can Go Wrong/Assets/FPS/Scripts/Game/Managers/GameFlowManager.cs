@@ -40,6 +40,14 @@ namespace Unity.FPS.Game
 
         public bool GameIsEnding { get; private set; }
 
+        public bool FadingToBlack 
+        { 
+            get
+            {
+                return GameIsEnding && Time.time >= m_TimeLoadEndGameScene;
+            }
+        }
+
         float m_TimeLoadEndGameScene;
         string m_SceneToLoad;
 
@@ -65,7 +73,7 @@ namespace Unity.FPS.Game
                 AudioUtility.SetMasterVolume(1 - timeRatio);
 
                 // See if it's time to load the end scene (after the delay)
-                if (Time.time >= m_TimeLoadEndGameScene)
+                if (FadingToBlack)
                 {
                     SceneManager.LoadScene(m_SceneToLoad);
                     GameIsEnding = false;
@@ -119,7 +127,7 @@ namespace Unity.FPS.Game
                     break;
 
                 case EndGameState.TankDestroyed:
-                    m_SceneToLoad = TankDestroyedSceneName;
+                    m_SceneToLoad = DeathSceneName;
                     m_TimeLoadEndGameScene = Time.time + EndSceneLoadDelay + DelayBeforeFadeToBlack;
                     break;
             }
@@ -129,6 +137,7 @@ namespace Unity.FPS.Game
         {
             EventManager.RemoveListener<AllObjectivesCompletedEvent>(OnAllObjectivesCompleted);
             EventManager.RemoveListener<PlayerDeathEvent>(OnPlayerDeath);
+            EventManager.RemoveListener<TankDestroyedEvent>(OnTankDestroyed);
         }
     }
 }
