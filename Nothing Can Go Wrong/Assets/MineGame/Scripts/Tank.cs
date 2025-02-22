@@ -9,6 +9,12 @@ public class Tank : MonoBehaviour
     private List<Transform> m_pathPoints;
 
     [SerializeField]
+    private AudioClip m_movementAudio;
+
+    [SerializeField]
+    private AudioSource m_engineAudioSource;
+
+    [SerializeField]
     private NavMeshAgent m_navMeshAgent;
 
     [SerializeField]
@@ -23,6 +29,8 @@ public class Tank : MonoBehaviour
     public void Go()
     {
         m_navMeshAgent.destination = m_pathPoints[0].position;
+        m_engineAudioSource.clip = m_movementAudio;
+        m_engineAudioSource.Play();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
