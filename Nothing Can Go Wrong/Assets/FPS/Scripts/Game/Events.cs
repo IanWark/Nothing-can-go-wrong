@@ -8,7 +8,7 @@ namespace Unity.FPS.Game
     public static class Events
     {
         public static ObjectiveUpdateEvent ObjectiveUpdateEvent = new ObjectiveUpdateEvent();
-        public static AllObjectivesCompletedEvent AllObjectivesCompletedEvent = new AllObjectivesCompletedEvent();
+        public static AllObjectivesCompletedEvent TankReachedObjective = new AllObjectivesCompletedEvent();
         public static GameOverEvent GameOverEvent = new GameOverEvent();
         public static PlayerDeathEvent PlayerDeathEvent = new PlayerDeathEvent();
         public static TankDestroyedEvent TankDestroyedEvent = new TankDestroyedEvent();
