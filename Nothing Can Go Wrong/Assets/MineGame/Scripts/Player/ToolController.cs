@@ -109,7 +109,7 @@ namespace Unity.FPS.Game
         /// <param name="show">Whether the tool is active.</param>
         public void ShowTool(bool show)
         {
-            ToolRoot.SetActive(show);
+            gameObject.SetActive(show);
 
             if (show && ChangeToolSfx)
             {
