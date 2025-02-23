@@ -2310,6 +2310,7 @@ GameObject:
   - component: {fileID: 4256412079204536}
   - component: {fileID: 33907030082841762}
   - component: {fileID: 23237290521164566}
+  - component: {fileID: 1352153315046537631}
   m_Layer: 0
   m_Name: SM_Veh_American_Tank_01_Track_l
   m_TagString: Untagged
@@ -2385,6 +2386,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1352153315046537631
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794353731356880}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300056, guid: 0213f143047399843af3eeeab224881d, type: 3}
 --- !u!1 &1950439617352822
 GameObject:
   m_ObjectHideFlags: 0

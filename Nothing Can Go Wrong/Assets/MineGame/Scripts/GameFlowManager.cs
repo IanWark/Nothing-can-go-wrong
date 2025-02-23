@@ -88,6 +88,12 @@ namespace Unity.FPS.Game
 
         void EndGame(EndGameState endGameState)
         {
+            if (GameIsEnding)
+            {
+                // Already ending
+                return;
+            }
+
             // Remember that we need to load the appropriate end scene after a delay
             GameIsEnding = true;
             EndGameFadeCanvasGroup.gameObject.SetActive(true);
