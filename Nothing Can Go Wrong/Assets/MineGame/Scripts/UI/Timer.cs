@@ -17,7 +17,6 @@ public class Timer : MonoBehaviour
     void Start()
     {
         lastTimeElapsed = 0f;
-        Timer.GetLastTimeElapsedFormatted();
     }
 
     // Update is called once per frame
