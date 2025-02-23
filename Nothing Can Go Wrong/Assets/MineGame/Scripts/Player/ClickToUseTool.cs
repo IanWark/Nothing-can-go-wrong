@@ -167,14 +167,6 @@ namespace Unity.FPS.Game
                 }
 
                 OnHitSomething(hit);
-
-                Debug.DrawRay(origin, direction * hit.distance, Color.yellow, DelayBetweenShots);
-                Debug.Log($"Did Hit: {hit.collider.gameObject}");
-            }
-            else
-            {
-                Debug.DrawRay(origin, direction * Reach, Color.white, DelayBetweenShots);
-                Debug.Log("Did not Hit");
             }
         }
 

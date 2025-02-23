@@ -96,7 +96,6 @@ MonoBehaviour:
   CrosshairInteractTime: 0
   ToolRoot: {fileID: 1505447205160222267}
   AimZoomRatio: 0.75
-  AimOffset: {x: 0, y: 0, z: 0}
   NeedsAmmo: 0
   StartingAmmo: 4
   MaxAmmo: 8
@@ -119,6 +118,7 @@ MonoBehaviour:
   m_ShovelHolePrefab: {fileID: 1851016723396466, guid: f4c6c7280b59251468aac38a51e6d0ae,
     type: 3}
   m_DistanceAboveGround: 0.05
+  m_onDigSound: {fileID: 8300000, guid: fa16bd6cbe8bcba40ad0f5c9644c9607, type: 3}
 --- !u!82 &8090847488450120274
 AudioSource:
   m_ObjectHideFlags: 0
