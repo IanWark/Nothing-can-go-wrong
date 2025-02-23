@@ -65,6 +65,7 @@ public class TellerMine : Explosive, IInteractable
 
                 m_mineTrigger.gameObject.SetActive(false);
                 m_fuse.gameObject.SetActive(false);
+                Defuse();
             }
         }
     }

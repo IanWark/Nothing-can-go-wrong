@@ -510,6 +510,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2898410618540004324}
+    - targetCorrespondingSourceObject: {fileID: -4413725178009295653, guid: a95681c86b616aa458fe8b84a86bb6cc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3402303022384866849}
     - targetCorrespondingSourceObject: {fileID: 370951023839750270, guid: a95681c86b616aa458fe8b84a86bb6cc,
         type: 3}
       insertIndex: -1
@@ -522,6 +526,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 910298960518497247}
+    - targetCorrespondingSourceObject: {fileID: 370951023839750270, guid: a95681c86b616aa458fe8b84a86bb6cc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2620569644048784028}
     - targetCorrespondingSourceObject: {fileID: -7594337024351636570, guid: a95681c86b616aa458fe8b84a86bb6cc,
         type: 3}
       insertIndex: -1
@@ -581,6 +589,21 @@ MonoBehaviour:
   - m_ToolEffectType: 4
     m_AudioClip: {fileID: 8300000, guid: 600da38013513394bbdb8bee59375a77, type: 3}
   m_AudioSource: {fileID: 6448448304034385901}
+--- !u!114 &3402303022384866849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3893410184102332312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78da8ada62e555e428d87e772a2e582b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_toolEffectType: 16
+  soundFX: {fileID: 8300000, guid: 7b83d61917ac1224f942a0609b1221f2, type: 3}
+  m_explosive: {fileID: 2347409966680568572}
 --- !u!4 &5684182640013150474 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -5020068532291032503, guid: a95681c86b616aa458fe8b84a86bb6cc,
@@ -687,6 +710,7 @@ MonoBehaviour:
   m_acceptedEffectTypes: 8
   m_mineTrigger: {fileID: 2354192045295152985}
   m_minePin: {fileID: 4287971869477590719}
+  m_explosive: {fileID: 2347409966680568572}
 --- !u!114 &910298960518497247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,6 +729,21 @@ MonoBehaviour:
   - m_ToolEffectType: 4
     m_AudioClip: {fileID: 8300000, guid: 600da38013513394bbdb8bee59375a77, type: 3}
   m_AudioSource: {fileID: 6448448304034385901}
+--- !u!114 &2620569644048784028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8183751114228304701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78da8ada62e555e428d87e772a2e582b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_toolEffectType: 16
+  soundFX: {fileID: 8300000, guid: 7b83d61917ac1224f942a0609b1221f2, type: 3}
+  m_explosive: {fileID: 2347409966680568572}
 --- !u!4 &8304038237282583720 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a95681c86b616aa458fe8b84a86bb6cc,

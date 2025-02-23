@@ -29,6 +29,13 @@ public abstract class Explosive : MonoBehaviour
     private LayerMask layerMask = ~0;
     private const QueryTriggerInteraction k_TriggerInteraction = QueryTriggerInteraction.Collide;
 
+    public bool isDefused { get; private set; } = false;
+
+    public void Defuse()
+    {
+        isDefused = true;
+    }
+
     public abstract void Activate();
 
     protected void Explode()
