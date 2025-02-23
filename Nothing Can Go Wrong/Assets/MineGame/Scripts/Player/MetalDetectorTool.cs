@@ -57,7 +57,8 @@ namespace Unity.FPS.Game
 
         private void OnTriggerEnter(Collider other) {
             if (IsToolActive) {
-                if (other.name == "s_mine_charge" || other.name == "SM_Prop_Landmine_01") {
+                //Debug.Log($"Name {other.name} "); 
+                if (other.name == "s_mine_charge" || other.name == "SM_Prop_Landmine_01" || other.name.Contains("Empty_Shells")) {
                     int key = other.GetInstanceID();
                     detectedMines.Add(key ,new DetectedMine(other));
                     //Debug.Log($"TriggerEntered - Added {key} {other.name}"); 
