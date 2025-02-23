@@ -568,8 +568,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AudioClipsForEffectType:
-  - m_ToolEffectType: 14
+  - m_ToolEffectType: 10
     m_AudioClip: {fileID: 8300000, guid: c5955b1ca51d47245ae5e5e10395d910, type: 3}
+  - m_ToolEffectType: 4
+    m_AudioClip: {fileID: 8300000, guid: 600da38013513394bbdb8bee59375a77, type: 3}
   m_AudioSource: {fileID: 6448448304034385901}
 --- !u!64 &3702186778613307699
 MeshCollider:
