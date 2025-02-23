@@ -55,6 +55,11 @@ namespace Unity.FPS.Game
 
         public override void HandleInputs(PlayerInputHandler inputHandler) { }
 
+        private void OnEnable()
+        {
+            detectedMines.Clear();
+        }
+
         private void OnTriggerEnter(Collider other) {
             if (IsToolActive) {
                 if (other.name == "s_mine_charge" || other.name == "SM_Prop_Landmine_01") {
