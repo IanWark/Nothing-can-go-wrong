@@ -59,6 +59,9 @@ MonoBehaviour:
   - {fileID: 3312910023548453782}
   - {fileID: 7584441500161092272}
   m_unscrewSound: {fileID: 8300000, guid: 96f7515c281259e47a2a9b7bdb4e9283, type: 3}
+  m_audioSource: {fileID: 6448448304034385901}
+  m_fuse: {fileID: 874456811586930087}
+  m_mineTrigger: {fileID: 1424557154064367316}
 --- !u!82 &6448448304034385901
 AudioSource:
   m_ObjectHideFlags: 0
