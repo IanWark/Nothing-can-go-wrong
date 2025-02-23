@@ -4,14 +4,14 @@ using UnityEngine;
 public class DestroyOnInteract : MonoBehaviour, IInteractable
 {
     [SerializeField]
-    private ToolEffectType toolEffectType;
+    private ToolEffectType m_toolEffectType;
 
     [SerializeField]
     private AudioClip soundFX;
 
     public void Interact(ToolEffectType toolEffectType)
     {
-        if (toolEffectType.HasFlag(toolEffectType))
+        if (m_toolEffectType.HasFlag(toolEffectType))
         {
             if (soundFX != null)
             {
