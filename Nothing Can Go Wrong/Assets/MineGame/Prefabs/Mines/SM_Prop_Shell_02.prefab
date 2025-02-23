@@ -125,8 +125,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AudioClipsForEffectType:
-  - m_ToolEffectType: -1
+  - m_ToolEffectType: 10
     m_AudioClip: {fileID: 8300000, guid: c5955b1ca51d47245ae5e5e10395d910, type: 3}
+  - m_ToolEffectType: 4
+    m_AudioClip: {fileID: 8300000, guid: 600da38013513394bbdb8bee59375a77, type: 3}
   m_AudioSource: {fileID: 1105873451159495706}
 --- !u!114 &8378780278047593256
 MonoBehaviour:
@@ -141,6 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolEffectType: 16
+  soundFX: {fileID: 8300000, guid: 6f3e0904bbbace745bdef08cdbcdfec0, type: 3}
 --- !u!82 &1105873451159495706
 AudioSource:
   m_ObjectHideFlags: 0

@@ -53,7 +53,6 @@ MonoBehaviour:
   ExplosionSound: {fileID: 8300000, guid: fc96116dc3c141440aabb5605744fea2, type: 3}
   ExplosionFX: {fileID: 1804206099813350, guid: baff2d0a696afa047a64ee39e5067de4,
     type: 3}
-  ExplosionScale: {x: 0.25, y: 0.25, z: 0.25}
   DebugAreaOfEffectColor: {r: 0.5, g: 0, b: 0, a: 0.5}
   LaunchForce: 6
   LaunchTimeSeconds: 0.75
@@ -577,8 +576,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AudioClipsForEffectType:
-  - m_ToolEffectType: 14
+  - m_ToolEffectType: 10
     m_AudioClip: {fileID: 8300000, guid: c5955b1ca51d47245ae5e5e10395d910, type: 3}
+  - m_ToolEffectType: 4
+    m_AudioClip: {fileID: 8300000, guid: 600da38013513394bbdb8bee59375a77, type: 3}
   m_AudioSource: {fileID: 6448448304034385901}
 --- !u!4 &5684182640013150474 stripped
 Transform:
@@ -699,8 +700,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AudioClipsForEffectType:
-  - m_ToolEffectType: 14
+  - m_ToolEffectType: 10
     m_AudioClip: {fileID: 8300000, guid: c5955b1ca51d47245ae5e5e10395d910, type: 3}
+  - m_ToolEffectType: 4
+    m_AudioClip: {fileID: 8300000, guid: 600da38013513394bbdb8bee59375a77, type: 3}
   m_AudioSource: {fileID: 6448448304034385901}
 --- !u!4 &8304038237282583720 stripped
 Transform:

@@ -118,7 +118,7 @@ MonoBehaviour:
   m_ShovelHolePrefab: {fileID: 1851016723396466, guid: f4c6c7280b59251468aac38a51e6d0ae,
     type: 3}
   m_DistanceAboveGround: 0.05
-  m_onDigSound: {fileID: 8300000, guid: fa16bd6cbe8bcba40ad0f5c9644c9607, type: 3}
+  m_onDigSound: {fileID: 8300000, guid: 3363f522c7b17a94dad04416794a040d, type: 3}
 --- !u!82 &8090847488450120274
 AudioSource:
   m_ObjectHideFlags: 0
