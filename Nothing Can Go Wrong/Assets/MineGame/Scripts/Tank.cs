@@ -46,6 +46,8 @@ public class Tank : MonoBehaviour
         m_navMeshAgent.isStopped = true;
 
         // End the game
-        EventManager.Broadcast(Events.TankDestroyedEvent);
+        GameOverEvent gameOverEvent = new GameOverEvent();
+        gameOverEvent.endGameState = GameFlowManager.EndGameState.TankDestroyed;
+        EventManager.Broadcast(gameOverEvent);
     }
 }

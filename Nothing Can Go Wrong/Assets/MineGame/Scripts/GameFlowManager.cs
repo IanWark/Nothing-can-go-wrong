@@ -53,9 +53,7 @@ namespace Unity.FPS.Game
 
         void Awake()
         {
-            EventManager.AddListener<AllObjectivesCompletedEvent>(OnAllObjectivesCompleted);
-            EventManager.AddListener<PlayerDeathEvent>(OnPlayerDeath);
-            EventManager.AddListener<TankDestroyedEvent>(OnTankDestroyed);
+            EventManager.AddListener<GameOverEvent>(OnGameOver);
         }
 
         void Start()
@@ -81,9 +79,7 @@ namespace Unity.FPS.Game
             }
         }
 
-        void OnAllObjectivesCompleted(AllObjectivesCompletedEvent evt) => EndGame(EndGameState.Win);
-        void OnPlayerDeath(PlayerDeathEvent evt) => EndGame(EndGameState.Death);
-        void OnTankDestroyed(TankDestroyedEvent evt) => EndGame(EndGameState.TankDestroyed);
+        void OnGameOver(GameOverEvent evt) => EndGame(evt.endGameState);
 
         void EndGame(EndGameState endGameState)
         {
@@ -135,9 +131,7 @@ namespace Unity.FPS.Game
 
         void OnDestroy()
         {
-            EventManager.RemoveListener<AllObjectivesCompletedEvent>(OnAllObjectivesCompleted);
-            EventManager.RemoveListener<PlayerDeathEvent>(OnPlayerDeath);
-            EventManager.RemoveListener<TankDestroyedEvent>(OnTankDestroyed);
+            EventManager.RemoveListener<GameOverEvent>(OnGameOver);
         }
     }
 }
