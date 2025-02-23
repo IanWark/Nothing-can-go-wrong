@@ -58,7 +58,7 @@ MonoBehaviour:
   m_tripwires:
   - {fileID: 3312910023548453782}
   - {fileID: 7584441500161092272}
-  m_unscrewSound: {fileID: 8300000, guid: 070779cdcfbe3ff4688691fb33bc3e4e, type: 3}
+  m_unscrewSound: {fileID: 8300000, guid: 96f7515c281259e47a2a9b7bdb4e9283, type: 3}
 --- !u!82 &6448448304034385901
 AudioSource:
   m_ObjectHideFlags: 0
