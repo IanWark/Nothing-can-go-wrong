@@ -96,7 +96,6 @@ MonoBehaviour:
   CrosshairInteractTime: 0.5
   ToolRoot: {fileID: 1505447205160222267}
   AimZoomRatio: 0.75
-  AimOffset: {x: 0, y: 0, z: 0}
   NeedsAmmo: 0
   StartingAmmo: 4
   MaxAmmo: 8
@@ -110,7 +109,7 @@ MonoBehaviour:
   ShootType: 0
   Reach: 2
   DelayBetweenShots: 0.5
-  UseSfx: {fileID: 8300000, guid: edb6eaaf36222f9429a9b2214ec69ad0, type: 3}
+  UseSfx: {fileID: 8300000, guid: ed3ee39c05e48a84ea1ee014d47e4af8, type: 3}
   UseContinuousUseSound: 0
   ContinuousUseStartSfx: {fileID: 0}
   ContinuousUseLoopSfx: {fileID: 0}
