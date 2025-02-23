@@ -39,14 +39,14 @@ namespace Unity.FPS.Game
                         Collider mine = c.Value.mineCollider;
                         Vector3 detectionPoint = DetectionPointObject.position;
                         Vector3 minePoint = mine.ClosestPoint(detectionArea.center);
-                        if (minePoint.y <= detectionPoint.y ) {
+                        //if (minePoint.y <= detectionPoint.y ) {
                             float distance = Math.Abs(Vector3.Distance(minePoint, detectionPoint));
                             if (c.Value.RequiresBeep(distance)) {
                                 m_ToolAudioSource.PlayOneShot(a_BeepSfx);
                                 l_BeepLight.SetActive(true);
                                 lightOn = true;
                             }
-                        }
+                        //}
                     }
                 }
                 if (!lightOn) l_BeepLight.SetActive(false);
