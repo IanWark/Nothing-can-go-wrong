@@ -247,7 +247,7 @@ MonoBehaviour:
   DelayBeforeFadeToBlack: 4
   WinGameMessage: Minefield cleared!
   DelayBeforeWinMessage: 2
-  VictorySound: {fileID: 8300000, guid: a533219934975884e81c1add37af9930, type: 3}
+  VictorySound: {fileID: 8300000, guid: 489560bc8c45a20408beb012e49b8421, type: 3}
   DeathSceneName: LoseScene
   TankDestroyedSceneName: LoseTankScene
 --- !u!114 &1065074375515001679
