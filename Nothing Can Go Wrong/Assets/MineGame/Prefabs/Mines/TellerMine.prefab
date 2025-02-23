@@ -502,6 +502,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3702186778613307699}
+    - targetCorrespondingSourceObject: {fileID: -1365202655900970979, guid: 9b9c2411f4379a945be6f79e23009cdc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4703824082360668703}
     - targetCorrespondingSourceObject: {fileID: -4170216801950109264, guid: 9b9c2411f4379a945be6f79e23009cdc,
         type: 3}
       insertIndex: -1
@@ -598,6 +602,21 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6276852359887204789, guid: 9b9c2411f4379a945be6f79e23009cdc, type: 3}
+--- !u!114 &4703824082360668703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2814480753741587466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78da8ada62e555e428d87e772a2e582b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_toolEffectType: 16
+  soundFX: {fileID: 8300000, guid: 6f3e0904bbbace745bdef08cdbcdfec0, type: 3}
+  m_explosive: {fileID: 5747988905683162261}
 --- !u!4 &5586822277738517500 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9b9c2411f4379a945be6f79e23009cdc,

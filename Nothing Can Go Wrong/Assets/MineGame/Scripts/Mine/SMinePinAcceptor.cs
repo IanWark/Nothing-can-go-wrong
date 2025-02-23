@@ -12,12 +12,16 @@ public class SMinePinAcceptor : MonoBehaviour, IInteractable
     [SerializeField]
     private GameObject m_minePin;
 
+    [SerializeField]
+    private Explosive m_explosive;
+
     public void Interact(ToolEffectType toolEffectType)
     {
         if (m_acceptedEffectTypes.HasFlag(toolEffectType))
         {
             m_mineTrigger.gameObject.SetActive(false);
             m_minePin.SetActive(true);
+            m_explosive.Defuse();
         }
     }
 }
