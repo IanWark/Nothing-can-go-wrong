@@ -750,6 +750,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: InstructionsMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 1579752377383222800, guid: 30fdd19bea11bc449a3fcd20f3a8fdb9,
+        type: 3}
+      propertyPath: m_text
+      value: 'Start by using your Metal Detector to scan for the mines below the
+        surface.
+
+        You can also stab the ground and listen for metal.
+
+        Next,
+        carefully dig up the ground around the mine with your shovel.
+
+        Now
+        you have to defuse the mine based on its type, as noted above.
+
+        NOTHING
+        CAN GO WRONG!'
+      objectReference: {fileID: 0}
     - target: {fileID: 2281697928838959690, guid: 30fdd19bea11bc449a3fcd20f3a8fdb9,
         type: 3}
       propertyPath: m_Pivot.x
@@ -849,6 +866,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197374880644951937, guid: 30fdd19bea11bc449a3fcd20f3a8fdb9,
+        type: 3}
+      propertyPath: m_text
+      value: 2. Anti-Tank or Teller Mines - meant to disable tanks and are detonated
+        by the heavy vehicles, not by the weight of soldiers. Watch out - they could
+        have trip wires attached that also need to be defused by cutting the wire
+        with your knife. These can be lethal.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
