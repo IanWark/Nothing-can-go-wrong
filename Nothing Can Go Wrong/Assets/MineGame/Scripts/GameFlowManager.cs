@@ -44,11 +44,12 @@ namespace Unity.FPS.Game
         { 
             get
             {
-                return GameIsEnding && Time.time >= m_TimeLoadEndGameScene;
+                return GameIsEnding && Time.time >= m_TimeStartFadingToBlack;
             }
         }
 
         float m_TimeLoadEndGameScene;
+        float m_TimeStartFadingToBlack;
         string m_SceneToLoad;
 
         void Awake()
@@ -63,7 +64,7 @@ namespace Unity.FPS.Game
 
         void Update()
         {
-            if (GameIsEnding)
+            if (FadingToBlack)
             {
                 float timeRatio = 1 - (m_TimeLoadEndGameScene - Time.time) / EndSceneLoadDelay;
                 EndGameFadeCanvasGroup.alpha = timeRatio;
@@ -71,8 +72,12 @@ namespace Unity.FPS.Game
                 AudioUtility.SetMasterVolume(1 - timeRatio);
 
                 // See if it's time to load the end scene (after the delay)
-                if (FadingToBlack)
+                if (GameIsEnding && Time.time >= m_TimeLoadEndGameScene)
                 {
+                    // unlocks the cursor before leaving the scene, to be able to click buttons
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+
                     SceneManager.LoadScene(m_SceneToLoad);
                     GameIsEnding = false;
                 }
@@ -83,10 +88,6 @@ namespace Unity.FPS.Game
 
         void EndGame(EndGameState endGameState)
         {
-            // unlocks the cursor before leaving the scene, to be able to click buttons
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-
             // Remember that we need to load the appropriate end scene after a delay
             GameIsEnding = true;
             EndGameFadeCanvasGroup.gameObject.SetActive(true);
@@ -95,6 +96,7 @@ namespace Unity.FPS.Game
                 case EndGameState.Win:
                     m_SceneToLoad = WinSceneName;
                     m_TimeLoadEndGameScene = Time.time + EndSceneLoadDelay + DelayBeforeFadeToBlack;
+                    m_TimeStartFadingToBlack = Time.time + DelayBeforeFadeToBlack;
 
                     // play a sound on win
                     var audioSource = gameObject.AddComponent<AudioSource>();
@@ -120,11 +122,13 @@ namespace Unity.FPS.Game
                 case EndGameState.Death:
                     m_SceneToLoad = DeathSceneName;
                     m_TimeLoadEndGameScene = Time.time + EndSceneLoadDelay;
+                    m_TimeStartFadingToBlack = Time.time;
                     break;
 
                 case EndGameState.TankDestroyed:
                     m_SceneToLoad = TankDestroyedSceneName;
                     m_TimeLoadEndGameScene = Time.time + EndSceneLoadDelay + DelayBeforeFadeToBlack;
+                    m_TimeStartFadingToBlack = Time.time + DelayBeforeFadeToBlack;
                     break;
             }
         }

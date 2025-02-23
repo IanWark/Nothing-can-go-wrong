@@ -1986,7 +1986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 705b060d91dd25446a76cfc9640acee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefaultSelection: {fileID: 0}
+  DefaultSelection: {fileID: 369537627}
 --- !u!1 &1947208091
 GameObject:
   m_ObjectHideFlags: 0
