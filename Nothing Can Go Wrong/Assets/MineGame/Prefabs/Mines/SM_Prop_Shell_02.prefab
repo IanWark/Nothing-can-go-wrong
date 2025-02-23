@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8378780278047593256}
   - component: {fileID: 1105873451159495706}
   m_Layer: 14
-  m_Name: SM_Prop_Shell_02
+  m_Name: SM_Prop_Shell_02 copy
   m_TagString: Diggable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

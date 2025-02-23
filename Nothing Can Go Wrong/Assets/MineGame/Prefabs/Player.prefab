@@ -470,6 +470,7 @@ MonoBehaviour:
   - {fileID: 2194578298122318636, guid: aa0b5374bd063c6499e0f221e49582a1, type: 3}
   - {fileID: 5757150367964262749, guid: 78d794ae06babbd4c95e67a10dfd3310, type: 3}
   - {fileID: 845620029391980391, guid: 9bce64abe375c70458c029eccfccaec9, type: 3}
+  - {fileID: 6207586245465919727, guid: f520b16aaec91e54db9b9296bbd80ce6, type: 3}
   ToolCamera: {fileID: 2286125971047457827}
   WeaponParentSocket: {fileID: 3891163784698469781}
   DefaultWeaponPosition: {fileID: 4354021110288562838}

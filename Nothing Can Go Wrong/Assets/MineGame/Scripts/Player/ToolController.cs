@@ -18,7 +18,7 @@ namespace Unity.FPS.Game
         public Color CrosshairColor;
     }
 
-    [RequireComponent(typeof(AudioSource))]
+    //[RequireComponent(typeof(AudioSource))]
     public abstract class ToolController : MonoBehaviour
     {
         [Header("Information")]
@@ -118,5 +118,6 @@ namespace Unity.FPS.Game
 
             IsToolActive = show;
         }
+
     }
 }
