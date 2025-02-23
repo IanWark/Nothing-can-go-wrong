@@ -2,11 +2,8 @@ using UnityEngine;
 
 public class ExitGame : MonoBehaviour
 {
-    
-    void QuitGame()
+    public void QuitGame()
     {
         Application.Quit();
-
-        Debug.Log("Game is exiting");
     }
 }

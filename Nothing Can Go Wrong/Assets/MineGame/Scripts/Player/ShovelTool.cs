@@ -24,7 +24,7 @@ namespace Unity.FPS.Game
 
             if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Dirt"))
             {
-                GameObject newHole = PrefabUtility.InstantiatePrefab(m_ShovelHolePrefab) as GameObject;
+                GameObject newHole = Instantiate(m_ShovelHolePrefab);
                 newHole.transform.position = hit.point + hit.normal * m_DistanceAboveGround;
 
                 Vector3 target = newHole.transform.position + hit.normal;
