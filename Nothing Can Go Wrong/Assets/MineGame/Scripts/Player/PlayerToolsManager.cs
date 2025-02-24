@@ -245,7 +245,7 @@ namespace Unity.FPS.Gameplay
         }
 
         // Updates weapon position and camera FoV for the aiming transition
-        void UpdateWeaponAiming()
+        private void UpdateWeaponAiming()
         {
             if (m_WeaponSwitchState == ToolSwitchState.Up)
             {
@@ -264,7 +264,7 @@ namespace Unity.FPS.Gameplay
         }
 
         // Updates the weapon bob animation based on character speed
-        void UpdateWeaponBob()
+        private void UpdateWeaponBob()
         {
             if (Time.deltaTime > 0f)
             {
@@ -349,6 +349,9 @@ namespace Unity.FPS.Gameplay
                 else if (m_WeaponSwitchState == ToolSwitchState.PutUpNew)
                 {
                     m_WeaponSwitchState = ToolSwitchState.Up;
+
+                    // Make sure weapon is where it should be.
+                    m_WeaponMainLocalPosition = DefaultWeaponPosition.localPosition;
                 }
             }
 
